@@ -1,0 +1,489 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "categorie": "Extrait de  Djawahirou-l-Ma’ani",
+      "titre": "Lettre aux disciples de la Tariqa Tijaniyya",
+      "auteur": "Sidi Ahmed Tijani (qu’Allah l’agrée)",
+      "date": "1 mars 2026",
+      "lecture": "5 min",
+      "resume": "La patience est l'une des plus grandes vertus en Islam. Elle nous permet de traverser les difficultés avec sérénité et confiance en Allah.",
+      "contenu": "La patience (As-Sabr) est mentionnée plus de 90 fois dans le Coran, ce qui témoigne de son importance capitale dans la vie du croyant.\n\nAllah dit dans le Coran : « Certes, Allah est avec les patients. » (2:153). Cette promesse divine est un phare pour celui qui traverse des moments difficiles.\n\n**Les trois formes de patience**\n\nLes savants de l'Islam ont identifié trois dimensions de la patience :\n\n1. **La patience dans l'obéissance** — accomplir les actes d'adoration même lorsque le corps est fatigué ou que l'âme est distraite.\n\n2. **La patience face aux péchés** — résister aux tentations et aux désirs qui éloignent d'Allah.\n\n3. **La patience face aux calamités** — accepter avec sérénité les épreuves, maladies, pertes et difficultés que la vie nous envoie.\n\n**La récompense des patients**\n\nLe Prophète ﷺ a dit : « Comme c'est étrange l'affaire du croyant ! Toutes ses affaires sont bonnes pour lui. Si une faveur lui arrive, il remercie et c'est bien pour lui. Si une calamité le touche, il endure patiemment et c'est bien pour lui. » (Muslim)\n\nCette perspective transforme notre relation à la souffrance. L'épreuve n'est plus une punition mais une opportunité d'élévation spirituelle.\n\n**Cultiver la patience au quotidien**\n\nPour développer cette vertu, il est recommandé de méditer régulièrement sur les histoires des prophètes — Ayyoub (Job) et sa maladie, Youssef (Joseph) et son emprisonnement, Ibrahim et les multiples épreuves qu'il traversa. Ces récits coraniques sont des modèles vivants de la patience en action.",
+      "couleur": "#0F7755",
+      "emoji": ""
+    },
+    {
+      "id": 2,
+      "categorie": "Livre",
+      "titre": "Rouhoul Eudeub : La quintinessence de la bonne convenance",
+      "auteur": "Cheikh Ibrahim Niasse (qu’Allah l’agrée)",
+      "date": "22 fév. 2026",
+      "lecture": "8 min",
+      "resume": "Comprendre les six piliers de la foi (Iman) qui constituent le fondement de la croyance musulmane et leur impact sur notre vie quotidienne.",
+      "contenu": "Les six piliers de la foi (Arkan al-Iman) constituent le socle de la croyance islamique. Ils ont été définis par le Prophète ﷺ lui-même lors du célèbre hadith de Jibril.\n\n**1. La foi en Allah**\n\nCroire en l'unicité absolue d'Allah (At-Tawhid) — qu'Il est unique dans Son essence, Ses noms, Ses attributs et Ses actes. Cette foi n'est pas une simple affirmation verbale mais une conviction profonde qui illumine chaque aspect de la vie.\n\n**2. La foi aux anges**\n\nLes anges sont des êtres de lumière créés pour adorer Allah et exécuter Ses ordres. Jibril (Gabriel) apportait la révélation, Mikail est chargé des pluies et des végétaux, Israfil soufflera dans le cor au Jour du Jugement.\n\n**3. La foi aux Livres révélés**\n\nAllah a envoyé des livres sacrés à ses prophètes : la Torah à Moïse, les Psaumes à David, l'Évangile à Jésus, et le Coran à Muhammad ﷺ. Le Coran est le dernier livre, préservé intact jusqu'à la fin des temps.\n\n**4. La foi aux Prophètes et Messagers**\n\nAllah a envoyé des prophètes à chaque communauté. Nous croyons en tous les prophètes, du premier (Adam) au dernier (Muhammad ﷺ). Chacun apportait le même message fondamental : l'adoration d'Allah seul.\n\n**5. La foi au Jour du Jugement**\n\nCroire que toute âme rendra compte de ses actes devant Allah. Ce jour remet en perspective nos priorités et nous rappelle que la vie terrestre est transitoire.\n\n**6. La foi au Destin (Al-Qadar)**\n\nTout ce qui se passe dans l'univers se déroule selon la volonté et la connaissance d'Allah. Croire au Qadar apporte une paix intérieure incomparable face aux aléas de la vie.",
+      "couleur": "#46D67A",
+      "emoji": ""
+    },
+    {
+      "id": 3,
+      "categorie": "Lettre",
+      "titre": "Troisiéme lettre de exortations",
+      "auteur": "Ustadha Fatima",
+      "date": "15 fév. 2026",
+      "lecture": "6 min",
+      "resume": "L'éducation islamique des enfants commence bien avant leur naissance. Découvrez les principes clés pour transmettre la foi à la prochaine génération.",
+      "contenu": "L'éducation des enfants est une amanah (dépôt de confiance) qu'Allah nous confie. Le Prophète ﷺ a dit : « Chacun de vous est un berger et chacun est responsable de son troupeau. »\n\n**Commencer tôt**\n\nL'éducation spirituelle commence dès le ventre de la mère. Les prières, la récitation du Coran et la sérénité de la mère pendant la grossesse influencent l'enfant. À la naissance, l'adhan est récité à l'oreille droite du nouveau-né.\n\n**La parole avant l'action**\n\nLes premières paroles qu'un enfant entend devraient être le nom d'Allah. Enseigner « Bismillah » avant chaque activité crée dès le plus jeune âge l'habitude de se souvenir d'Allah dans chaque geste quotidien.\n\n**L'exemple est la meilleure pédagogie**\n\nLes enfants apprennent en observant. Si les parents prient régulièrement, le jeûnent, lisent le Coran avec présence et joie, les enfants absorbent naturellement ces pratiques. On ne peut pas transmettre ce que l'on ne vit pas.\n\n**La douceur avant tout**\n\nLe Prophète ﷺ était connu pour sa tendresse avec les enfants. Il les prenait dans ses bras pendant la prière, jouait avec eux, les appelait par des surnoms affectueux. L'Islam s'enseigne d'abord par l'amour, jamais par la contrainte ou la peur.\n\n**Les histoires coraniques**\n\nLes récits des prophètes sont des outils pédagogiques extraordinaires. Ces histoires d'aventure, de courage, de foi et de résilience captent l'imaginaire de l'enfant et gravent dans son cœur les valeurs islamiques de manière durable.",
+      "couleur": "#0F7755",
+      "emoji": ""
+    },
+    {
+      "id": 4,
+      "categorie": "Discours",
+      "titre": "Discours de Mawlane Cheikh Oul Khayri",
+      "auteur": "Mawlane Cheikh Oul Khayri",
+      "date": "8 fév. 2026",
+      "lecture": "10 min",
+      "resume": "Du VIIIe au XIIIe siècle, la civilisation islamique a produit des avancées majeures en sciences, médecine, philosophie et arts. Un héritage à redécouvrir.",
+      "contenu": "Entre le VIIIe et le XIIIe siècle, Baghdad, Cordoue et le Caire étaient les centres du monde intellectuel. C'est ce qu'on appelle l'âge d'or islamique — une période où la quête du savoir était un acte d'adoration.\n\n**La Maison de la Sagesse (Bayt al-Hikma)**\n\nFondée à Baghdad sous le calife Harun al-Rashid et développée par Al-Ma'mun, cette institution rassemblait des savants de toutes origines — Arabes, Persans, Grecs, Juifs, Chrétiens — pour traduire, préserver et enrichir le savoir universel.\n\n**Les sciences**\n\nIbn al-Haytham (965-1040) révolutionna l'optique et la méthode scientifique. Al-Biruni calculait la circonférence de la Terre avec une précision extraordinaire. Al-Khwarizmi inventa l'algèbre et donna son nom aux algorithmes.\n\n**La médecine**\n\nIbn Sina (Avicenne) écrivit le Canon de la Médecine, qui fut le manuel de référence des facultés de médecine européennes jusqu'au XVIIe siècle. Ibn Rushd (Averroès) commentait Aristote avec une profondeur qui allait influencer toute la scolastique médiévale.\n\n**Les arts et l'architecture**\n\nL'Alhambra de Grenade, la Grande Mosquée de Cordoue, les mosquées d'Isfahan — ces monuments témoignent d'une sensibilité esthétique raffinée où géométrie sacrée, calligraphie et lumière se conjuguent pour élever l'âme vers le divin.\n\n**Un héritage à assumer**\n\nRedécouvrir cet héritage n'est pas une nostalgie stérile mais un rappel que l'Islam et la connaissance ne se sont jamais opposés. Bien au contraire, le premier mot révélé fut « Iqra » — Lis.",
+      "couleur": "#46D67A",
+      "emoji": ""
+    // },
+    // {
+    //   "id": 5,
+    //   "categorie": "Livre",
+    //   "titre": "Courrez vers Allah",
+    //   "auteur": "Mawlane Thierno Hamath Ndiaye",
+    //   "date": "1 fév. 2026",
+    //   "lecture": "4 min",
+    //   "resume": "L'Islam accorde une importance exceptionnelle aux droits du voisin. Le Prophète ﷺ insistait tellement sur ces droits que ses compagnons croyaient qu'il allait en faire un héritier.",
+    //   "contenu": "Le Prophète ﷺ a dit : « Jibril ne cessait de me recommander le bon voisinage au point que j'ai cru qu'il allait en faire un héritier. » (Bukhari & Muslim)\n\nCette déclaration prophétique illustre l'importance extraordinaire que l'Islam attache à la relation avec le voisin.\n\n**Qui est mon voisin ?**\n\nLes savants s'accordent à dire que le voisin comprend les quarante maisons autour de la sienne dans toutes les directions. Le voisinage n'est pas une question de religion, d'ethnie ou de classe sociale — tout être humain vivant à proximité a des droits sur nous.\n\n**Les droits du voisin**\n\n- Ne pas lui causer de nuisance (bruit, odeurs, obstruction)\n- Partager avec lui si on a de l'abondance\n- L'aider en cas de besoin\n- Le saluer et lui sourire\n- Visiter ses malades\n- Participer à ses joies et à ses peines\n- Protéger son honneur et ses biens en son absence\n\n**Le bon voisinage comme ibada**\n\nChaque geste de bonté envers le voisin est une ibada (adoration). Offrir un plat cuisiné, aider à porter des courses, simplement prendre des nouvelles — ces actes quotidiens sont autant d'opportunités de se rapprocher d'Allah.\n\n**Un témoignage vivant de l'Islam**\n\nDans une société où l'individualisme règne, être un bon voisin est l'un des da'wa (invitation à l'Islam) les plus puissants. Le comportement parle plus fort que les mots.",
+    //   "couleur": "#0F7755",
+    //   "emoji": ""
+    // },
+    // {
+    //   "id": 6,
+    //   "categorie": " ",
+    //   "titre": " Wird tidiane : Pratiques et conditions",
+    //   "auteur": "Mawlane Thierno Hamath Ndiaye",
+    //   "date": "25 jan. 2026",
+    //   "lecture": "7 min",
+    //   "resume": "Le temps est l'une des plus grandes ni'ma (grâces) qu'Allah nous a accordées. Pourtant, c'est souvent la ressource la moins bien gérée. Islam et productivité, comment les concilier ?",
+    //   "contenu": "Allah jure par le temps au début de la sourate Al-'Asr : « Par le Temps ! L'être humain est certes en perdition, sauf ceux qui croient et font de bonnes œuvres. » (103:1-3)\n\nCe serment divin souligne la valeur extraordinaire du temps dans notre existence.\n\n**Le temps comme amanah**\n\nNous serons questionnés sur notre vie entière. Le Prophète ﷺ a dit : « Les deux pieds du serviteur ne bougeront pas au Jour du Jugement avant qu'il soit interrogé sur quatre choses : sur sa vie, comment il l'a passée ; sur sa jeunesse, comment il l'a usée... »\n\n**Apprendre des premières générations**\n\nLes salaf (premières générations) avaient une relation différente au temps. Imam Ahmad ibn Hanbal se réveillait avant Fajr pour prier la nuit, puis enseignait, puis étudiait, puis rendait service à sa communauté. La structuration autour des cinq prières crée naturellement un rythme de vie équilibré.\n\n**Les cinq prières comme ancres temporelles**\n\nLes salat ne sont pas des interruptions de notre journée — elles en sont la colonne vertébrale. En structurant le temps autour des prières, on crée des blocs naturels pour le travail, la famille, le repos et la réflexion.\n\n**Principes pratiques**\n\n1. **Niyyah (intention)** — Commencer chaque journée par une intention claire. Qu'est-ce que j'accomplis aujourd'hui pour Allah ?\n2. **Bismillah avant chaque tâche** — Ce geste simple réoriente notre activité vers le divin.\n3. **Éviter le lahw (divertissement vain)** — Pas d'interdiction du repos, mais conscience de ce qui nourrit l'âme vs ce qui la vide.\n4. **Bilan nocturne (muhasaba)** — Avant de dormir, s'interroger : ai-je accompli ce pour quoi j'ai été créé aujourd'hui ?",
+    //   "couleur": "#46D67A",
+    //   "emoji": ""
+    // }
+  ]}
+
+----------------------------------------------------------------------------------------
+TROISIÈME LETTRE DES EXHORTATIONS
+
+Au nom de Dieu, le Clément, le Miséricordieux, le
+vengeur, le Tout puissant; l'imposant, l'orgueilleux.
+Que la prière et le salut soient sur le meilleur serviteur, qui
+a dit:
+«O toi, Fatima, fille de Mouhammad, je ne peux rien
+t'accorder, venant de Dieu.»
+Ceci dit:
+Je loue Allah, d'une louange propice. Que mes salutations
+parviennent à notre fils Ahmadou Thiam et Malick Sow; à
+quiconque recevra cette lettre, et à tout individu qui se
+réclame de nous.
+Son motif; vous faire savoir que deux ne font pas partie de
+moi, ni de la voie, en rien: le parvenu sans ré immersion et
+l'aspirant non parvenu, tant qu'ils persistent en leurs états et
+suspendent leur marche. Mon affaire à moi, comme vous le
+savez est celle-ci que, celui qui aspire à être avec moi est
+tenu d'entrer dans ma voie en ses paroles et en ses actions,
+dans l'accomplissement des prescriptions et l'abandon des in
+terdits, en sa nature manifeste et cachée et d'aspirer à
+l'accession de la bénédiction d'Allah et de son prophète.
+17/360
+Celui qui, faisant partie de nous agit différemment; qui va à
+l'encontre de la sainte loi révélée, (charia) par quelque acte
+prohibé et qui abandonne les prescriptions, je prends Dieu à
+témoin et vous aussi, que je n'ai plus rien à voir avec lui. O
+Seigneur, je ne fais point partie de ce qu'ils accomplissent.
+"Que ceux, donc, qui s’opposent à son commandement
+prennent garde qu’une épreuve ne les atteigne, ou que ne
+les atteigne un châtiment douloureux.”La Lumière: 23
+"O vous qui croyez, repentez vous donc vers votre
+Seigneur." La Lumière Verset:31
+Concernant votre propos disant que mon disciple est pareil
+à un sac empli des secrets des trois stations, vous dites vrai,
+mais qui donc d'entre vous est mon disciple ? Car devenir
+mon disciple est plus difficile d'accès que la pierre philo
+sophale pour vous, tel que vous le définissez.
+Il ne fait aucun doute, que je relèverai le droit d'exercer, à
+tout Mouqaddam dont les disciples accomplissent en dessous
+de lui les choses prohibées, sans qu'il n'agisse comme il se
+doit, dans ce contexte. Et si sa prohibition est vaine, qu'il mi
+gre donc vers Dieu; son prophète et vers nous.
+18/360
+Je jure que rien n'a suspendu leur marche au point de se
+fier à des évènements, autre que le fait de demeurer trop
+longtemps sans se tourner vers nous. Car quiconque se joint
+à nous, en la plupart de ses heures, en oublie le goût du
+plaisir. Il se trouve ici, en effet, des adolescents qui ont
+depuis fort longtemps déjà, oublié le goût du plaisir, à telle
+enseigne qu'il se trouve parmi eux quelqu'un, qui a oublié
+son épouse au point de ne l'aller retrouver que s'il en reçoit
+l'ordre, ou qu'il s'y voit forcé. Tel est donc mon disciple et,
+autrement, il ne l'est pas.
+Vous ne pouvez ne pas opérer de retour à Dieu par le re
+pentir, l'observance, la méfiance; le détournement des choses
+de ce monde, la persévérance et la recherche de
+connaissance.
+Allah le très haut a dit, à propos du maître de tous les
+saints: "Et dis : Mon Dieu accroît ma connaissance."
+Tahâ: 114
+Le disciple est tenu de ne jamais arrêter sa marche en Dieu
+et, s'il parvient à ma station au point que je ne puisse plus
+m'occuper de son affaire, qu'il continue sa marche par un
+autre guide dont la station soit supérieure à la mienne.
+Sachez, (qu'Allah vous fasse miséricorde) que nombre de
+ceux qui appellent vers Dieu, détournent les gens de la voie
+de Dieu par leurs propres transgressions. Or, celui qui se
+19/360
+réclame d'Allah tout en en détournant les gens, lui déclare la
+guerre. Il fait, en fin de compte partie des mécréants, en ce
+qu'il appelle dans la désobéissance qui elle même est cause
+de détournement.
+Vous ne pouvez ne pas vous joindre à nous, la majeure
+partie de votre temps afin de reprendre de nous les bi
+enséances de la marche, tout comme vous aviez acquis de
+nous les réalités de l'attraction (djasb). Celui qui agit ainsi
+accède au plus grand des saluts.
+Vous ne pouvez ne pas transformer les défauts de nos
+proches disciples par la main, la langue et le cœur. Il ne peut
+en être autrement pour celui dont le désir est d'accéder à la
+félicité, d'observer et d'appliquer les enseignements proven
+ant de nous, qu'ils soient en vers ou en prose. Il est oblig
+atoire pour chaque disciple de retenir cette lettre. Que
+quiconque la reçoit l'écrive et la récite chaque jour.
+Appelez à la prière, acquittez-vous de l'aumône (zakat) du
+Jeun et du Hajj pour quiconque en a les moyens, une fois. Et
+donnez en aumône de vos biens pour la face de Dieu.
+Il se trouve, dans les hadîths de Mouslim, que le prophète
+Mouhammad, (saw) a dit: «La pureté rituelle est la moitié de
+la foi en Dieu; Al Hamdoulillahi est à même de remplir la
+balance. Soubhanallah et Alhamdoulillah à eux deux,
+20/360
+peuvent faire pencher la balance ou ce qui se trouve entre
+les cieux et la terre. La prière est lumière, et l'endurance, une
+clarté spirituelle. Le Coran est une preuve envers ou contre
+toi. Chaque homme vend son âme chaque jour, en salut ou
+perdition.»
+Allah le très haut a dit, et il est le plus véridique de tous
+ceux qui parlent: "Certes Dieu ordonne l'équité, la bien
+faisance et l'assistance aux proches. Et il interdit la
+turpitude, l'acte répréhensible et l'injustice. Il vous exhorte
+afin que vous vous souveniez." An Nahl: 90
+Un immense châtiment donc, à celui qui n'accepte pas
+totalement les décrets d'Allah et de son prophète.
+Quiconque reçoit notre lettre-ci, se repent, regrette et se
+rattrape par l'accomplissement des commandements accédera
+au salut dans ce monde-ci et dans l'autre, et Dieu lui aura al
+ors pardonné tous ses péchés. Quant à celui qui ne fera pas
+amende honorable, je prends Dieu à témoin et vous aussi,
+que je n'ai plus rien à voir avec lui, ce que je ne fais qu'après
+qu'Allah et son prophète se soient retirés de lui.
+Vous êtes dans l'obligation de réciter la prière de
+l'ouverture, (salâtoul fâtihi limâ oukhliqa). Il vous est oblig
+atoire d'enfouir les secrets, en paroles et en actes et arrêtez
+de vulgariser les paroles des connaissants, et ré-immergez
+21/360
+vous dans la voie droite (sirât al moustaqîm ). Ces choses en
+lesquelles vous demeuriez sont des plaisirs et des idoles que
+vous adoriez, alors que vous affirmez croire en Dieu.
+Dieu a dit: "Celui qui renie les idoles, croit en Dieu et
+tient une corde solide qui ne s'effrite ni ne se rompt. Allah
+entend et sait ce que vous faites." La Vache: 256
+O Ahmad Thiam, transmets cette lettre à quiconque s'est
+affilié à nous et expédie à tout responsable une copie, en son
+lieu, afin qu'il la lise et l'applique avec son entourage dans
+l'espoir en Dieu, que se retrouvent en lui des cœurs purs et
+les oreilles de l'entendement.
+Qu'Allah nous accorde à la rectitude, de même que vous.
+Écrite par Ibrahima Ibn El Hadji Abdoullah Tidjani, à
+Médina Kaolack. Qu'Allah préserve Médina de tout mal,
+Amine.
+An 1349 de l'hégire.
+
+------------------------------------------------------------------------------------------------------------
+ROUHOULADAB
+par Cheikh Ibrahima Abdallah NIASS
+1.Ibrahim ,fils d'EL Hadji Abdoullah ,notre brillante pleine lune,
+2.Apres avoir commencé par le nom d'Allah ,j'exprime tous mes remerciements à Allah, le
+Bienfaisant, le Glorieux
+3.Cet ouvrage est un conseil pour mes frères qui devraient (tenir fermement) prendre la Tarîqa
+Tijania,le Chemin de la Vertu et la Bénédiction établie sur la base de la Sunna et du Coran,
+4.Persistes en faisant les services obligatoires de la tariqa.Par cela, tu atteindras des bénéfices
+et la réalité
+5.Tu ne tireras pas un bénéfice par une simple initiation (dans la tarîqa) à moins que tu colles
+à son exécution une bonne conduite
+6.Tu devrais observer ses règles comme elles ont été établies et sois familier à son code de
+conduite.
+7.
+8.Tu devrais respecter tous les frères qui sont dans la tarîqa, en particulier les leaders qui
+devraient être obéis
+9.En exécutant les services (envers Dieu), tu devrais te concentrer avec le respect qu'il faut
+autant que tu pourras
+10.Sois de bonnes manières ouvertement et secrètement. Avec cela, tu seras élevé à des hauts
+niveaux
+11.Aies en mémoire l'image de ton cheikh qui t'a initié spirituellement de même que celle de
+ton grand Cheikh, sans aucun doute
+12.Pense plus à Dieu et garde le silence car la solitude pourrait être un avantage
+13.Cherche un sincère et bien informé éducateur qui a une parfaite connaissance de Dieu et
+qui est un guide droit.
+14. Soumets toi totalement à lui, Tu devras toujours être comme un cadavre devant lui et
+l'informer de tes conditions
+15.Ne le contredis jamais. Même si ses opinions paraissent fausses, imite le toujours
+16.Ce qui apparait comme erroné d'un cheikh est devant un sage Mouride (disciple), plus
+correcte et approprié.
+17. Ne prête attention à personne d'autre dans ce monde
+18.Sois avec lui (ton Cheikh) fermement, comme si rien d'autre n'existait au monde.
+19. Le mouride n'a aucune autre personne au-dessus de ce saint (Cheikh Tijane RLA) ainsi
+que le Messager d'ALLAH(SAW) et notre Seigneur le Très Grand
+20.Tant qu'il existe un rival à ceux-là (susmentionnés) dans l'esprit du (Mouride), il ne pourra
+jamais atteindre la vraie connaissance d'ALLAH. Je le dis avec certitude.
+21. Sois toujours avec le Cheikh et tu gagneras beaucoup. Il faut beaucoup l'aimer et tu
+réussiras.
+22. Ton avancement spirituel sera proportionnel à l'amour que tu portes envers lui (ton cheikh)
+ainsi disaient les Soufis
+23.Depense ta nouvelle et ancienne richesse à la recherche de son plaisir et suis rapidement
+ses instructions
+24.Satisfais ton Cheikh même s'il t'inflige un mauvais traitement. Réalise qu'il t'a conduit à ce
+qui sera pour toi un bénéfice pour toujours.
+25. Sois très conscient du temps (pour les services d'ALLAH).Evite la paresse afin qu'un test
+ne te révèle une régression (déclin spirituel).
+26. Si tu es comblé de Grâces (d'ALLAH), ne sois pas trop gai. Tu devrais aussi accepter le
+contraire (chagrin) quand il arrive.
+27. Les deux (grâce et chagrin) sont tous [provenant] d'ALLAH. En vérité, ALLAH est à
+l'abri de tout blâme pour tout ce qu'Il fait.
+28. Ne te plains pas beaucoup du mal que t'infligent les gens comme si tu n'étais pas créé pour
+être testé avec de telles choses.
+29. Des plaisirs te viendront des gens comme pour te détourner vers eux, alors que ton
+orientation c'est vers ALLAH.
+30. Si tu es testé avec des difficultés et des problèmes, sois patient. Soulagement et allégresse
+s'ensuivront bientôt.
+31. Chaque nuit est suivie d'un jour comme chaque difficulté d'une aisance.
+32. En vérité, chaque difficulté est suivie d'un double soulagement comme cela a été rapporté
+par Ahmad du clan d’Adnan.
+33. Si tu comprends ce qui est susmentionné, tu seras toujours satisfait et content des
+jugements d'ALLAH.
+34. Si tu cherches quelque chose et que tu ne l'as pas, Celui qui l'a rejeté(ALLAH) sait
+pourquoi, alors que toi tu l'ignores.
+35. Il empêche ce qui te nuira hors de sa Miséricorde. Ne blâme pas notre Seigneur pour tout
+ce qu'Il fait, sinon tu deviens maudit.
+36. SI les gens savaient comment Allah répand sa Grâce sur nous, ils sauraient supporter toute
+difficulté avec allégresse.
+37. Ne désire pas être honoré par n'importe quelle créature sans pour autant lutter afin d'être
+honorable au regard d'ALLAH. Ne le fais jamais.
+38. Au lieu d'être content d'un don quand tu es favorisé, sois plutôt content du Donneur si tu
+es sage.
+39. Ne méprise pas un compagnon musulman et ne remarque pas les défauts des autres
+(saches que) tes propres défauts sont connus par les autres.
+40. Bon nombre d'entre eux habillés en locks, couverts de poussière, quand ils font un serment
+au nom d'ALLAH, Il l'exauce comme cela a été rapporté.
+41. N’inflige pas un mal à un musulman même s'il est manifeste qu'il t'a offensé. Essaie
+toujours de pardonner tes offenseurs.
+42. Certainement, cette créature (à qui tu es en train de faire du mal) est un serviteur
+d'ALLAH. Oh mon frère, ne fais pas de mal à un serviteur d'ALLAH.
+43. Il ne te plaira pas qu'on fasse du mal à ton propre serviteur (même s'il est en faute).Donc
+tu devrais craindre ALLAH et penser à LUI.
+44. Sois toujours chagriné par tes pêchés et souviens toi aussi bien de la mort que des
+enquêtes qui t'attendent après la mort.
+45. Saches qu'il est indispensable que tu cherches d'abord le savoir et demeurer dans les règles
+divines.
+46. Je jure sur ma vie que la connaissance est le guide de toutes les actions comme cela a été
+rapporté par TA-HA, le meilleur de tous les prophètes.
+47. Oh toi qui suis le chemin spirituel du Tassawouf, obtiens quatre(4) types de connaissance:
+48.Le premier est la connaissance en Dieu,
+49.Le second est de savoir ce qui est lié à l’adoration (d'ALLAH) qui mène à la certitude,
+50.Le troisième est de connaitre les états d'esprits, les tromperies, les tours et les maux.
+51. L’esprit a son propre défaut, de même que l'âme.
+52. La vie aussi a ses propres faiblesses et sans aucun doute.
+53. Sois vraiment discipliné en voyage spirituel (avancement) parce que c'est la porte du
+succès de chaque voyageur spirituel.
+54. Tu devras craindre ALLAH tout le temps et être humble. Tu ne perdras pas ton respect en
+étant humble.
+55. La connaissance, la richesse et la fertilité se présentent avec des signes de rabaissement :
+Exemple: les noms avec des accents situes en bas (en arabe)
+56.L'ignorance, la pauvreté et la stérilité en vérité, se présentent avec des signes d'élévation
+.Exemple: les noms avec des accents situés au-dessus des premières lettres (en arabe)
+57.Ce qui est susmentionné constitue des signes de réflexion si tu es sage. Essaie de raisonner
+et tu comprendras.
+58. L’eau courante ne s'arrête et ne stagne jamais sur une colline ni sur les sommets des
+arbres.
+59. Ne sois pas satisfait de toi même(Nafsou), ne lève pas les yeux sur les autres et ne crains
+rien d'autre sinon ALLAH
+60.Oh!mon frère ne sois pas arrogant ni méchant et évite de te faire montrer. Dirige toujours
+ton esprit vers ton Seigneur(ALLAH).
+61. Le fait d'être arrogant dû à la connaissance, à la noblesse de naissance, à la compagnie
+sociale ou à l'acte d'adoration est détestable.
+62. Le pêché commis qui apporte l'humilité à une personne est meilleur que l'acte d'adoration
+qui le pousse à être arrogant.
+63. Tu ne peux pas t'empêcher de faire des actions blâmables à condition que tu te soumettes à
+ton Cheikh qui connait ALLAH.
+64.Demeure strictement dans l'enseignement des Cheikh si tu veux vraiment atteindre la haute
+gloire
+65.Le meilleur des Cheikh à suivre parmi tous est notre guide Tidiane ,le Prestigieux .
+66. Il est le lien entre ceux qui connaissent Dieu et la source (de leur connaissance) et le soleil
+(qui illumine)
+67. Et la meilleure des tarîqas est aussi la sienne sans aucun doute
+68. Il est interdit de combiner cette tarîqa avec une autre.
+69. Celui qui prêche pour cela est un perdant dans l'Au-delà.
+70. Quiconque dit cela, a menti et a fabriqué un serment falsifié contre Allah le très Haut, le
+Tout Puissant. Je confirme avec insistance que ce Wird se suffit à lui-même.
+71. Tu devrais te concentrer à la récitation du Wird de cette Tarîqa. Alors, je jure (sur ma vie)
+que tu seras guidé et atteindras ton but(ALLAH).
+72. Continue de réciter les implorations, salatoul Fatiha et allahoumma aleyka mouhawali
+(pour l'obtention spirituelle)
+73. En plus de ce qui est mentionné en haut, tu devras réciter les autres prières préparées
+(collectées) par les autres érudits de cette tarîqa(Tehrani) si tu es capable de les garantir.
+74. Mais les prières spéciales (Siriis) ne sont pas facilement obtenues, sinon avec beaucoup de
+lutte et en restant avec eux.
+75. Mais au-delà de cela, tu auras aussi persisté à la récitation de tout ce qu’il t'a été donné et
+rester fermement avec les conseils.
+76. Oh toi à qui l'existence est dissoute en Allah, préfère ne pas discuter avec les camarades
+quand tu es assis avec lui (Ton Cheikh).
+77. Si tu le fais, tu ne devrais pas espérer gagner des secrets divins comme ils ne sont pas
+obtenus en public.
+78. Si tu restes avec lui, tu combleras définitivement tous les défauts. En vérité, tu gagneras
+de lui (Ton Cheikh) quelques lumières puissantes dans l'esprit.
+79. C’est certain avec les hommes d'Allah. Ainsi, réveille-toi.
+80. Quiconque ne connaît pas la vraie connaissance du Bienfaisant (Allah), sa vie est entravée
+pour toujours.
+81. Allah a dit je n'ai créé ces êtres pour qu'ils me servent. Service signifie ici qu'ils devraient
+me connaitre.
+82. Ne relâche pas ton effort en cherchant la connaissance d'Allah et tu verras alors les
+merveilles d'être auprès du Bienfaisant.
+83. Allah se manifeste toujours de toute chose, sur toute chose et avec toute chose, avant et
+auprès toute chose, pour toujours.
+84. Si tu souhaites augmenter ta foi alors répands toi avec sincérité et sois droit.
+85. Ne hais jamais un musulman ni se fâcher contre lui, à moins qu'll rabaisse la totalité des
+lois divines.
+86. Observe constamment les prières nocturnes, supporte la faim, nourris toi de ce qui est
+légal et pur et prends acte des interdits.
+87. Conseille toujours aux gens de faire .Garde le silence, aies de la courtoisie vis à vis des
+gens d'intelligence(Soufis) et de bonne conduite parmi tes amis.
+88. Une personne se déplace avec son meilleur ami en croyance.
+89. Si l'ami est bon, elle aussi le sera. Si l'ami est comme un animal, elle aussi le sera.
+90. Rappelle-toi le plateau (pour peser les actes), le déploiement du livre d’enregistrement et
+ce que Jahanama (feu de l'enfer) contient en termes de châtiment perpétuel.
+91. Et souviens-toi de ce qui est au paradis, comme les belles femmes, les bons voisins et les
+maisons convenables.
+92. Continue d'observer les services qui éradiquent les pêchés .Le plus certain d'eux est la
+Salat de ce Khoutboul (Cheikh Tijani RLA).
+93. Parmi eux, il y'a la récitation de Mousabiatou Ashara, l'imitation de celui qui appelle
+(Adhan ‘’nood’’) à la prière. Ainsi, prends acte de cela.
+94. Il y 'a diverses prières dans la Tarîqa mais la salate occupe une plus haute position.
+95. Salatoul Tasbihi en est une, récitation de la Tasbihi aussi bien que la lecture du Coran en
+est une autre. Sois ferme à ces activités.
+96. Deux rakkas exécutées en secret et aller à la mosquée, éradiquent tes pêchés.
+97. Exécuter les ablutions proprement, guider l’aveugle, assister tes frères en résolvant leurs
+problèmes et autres actions généreuses.
+98. Méditer beaucoup sur Dieu comme si tu comptais les vagues de la mer dans la méditation,
+serrer la main aux camarades, sont des avantages que tu ne dois pas rater.
+99. Vivre dans la vie islamique, jeûner le mois de ramadan et prier pendant les nuits de
+ramadan constituent tous des éradiquateurs de pêchés.
+100. Aller au pèlerinage à la Mecque et à Médine, exécuter le petit Hadj(Oumra), offrir de
+l'aumône secrètement à partir de l'argent obtenu loyalement, est un clair Saadaqa.
+101. Enseigner aux petits enfants tout le Coran, prier en public tout le temps, tout cela est
+aussi mentionné dans le Livre (comme éradiquateur de pêchés).
+102. Ici, il y a de mauvaises actions qui durcissent le cœur empêchant ainsi la crainte d'Allah.
+Parmi elles, le fait de se montre est pire.
+103. Etre comique, médisant, de mauvaise compagnie, indécent, calomnier et de mauvais
+esprit (niaaw djorte).
+104. Evite de suivre toujours ton intérêt et de te tourner vers l’amour de ce monde et ses
+matériels qui scintillent.
+105. Reste à la maison et évite beaucoup les discussions mondaines, ne t'intéresse pas aux
+discussions inutiles et ne te dispute pas.
+106. Evite de découvrir les fautes des gens .Essaie de te mettre en dehors de ça avec toute ta
+force.
+107. Donne de l'argent comme aumône pour l'amour de Dieu, visite les tombes des frères
+musulmans (et prie pour eux) sans limite.
+108. Ne jure pas à moins que tu n'aies pas un autre moyen. Tu devras baser les choses sur la
+volonté d'Allah à chaque fois que tu jures.
+109. Je conclus mon conseil à mes frères bref comme ça ressemble à une mode de cette
+époque
+110.Ecrit en l'an deux ajouté de quarante avec trois fois cent plus mil (en 1342) de l'hégire
+111.j'ai donné à ce poème le titre ROUHOU ADAB par ce qu'il contient de sagesse et d’une
+bonne éducation.
+112.Agrée par cette versification l'ensemble des croyants ,Oh notre Seigneur par la Grâce du
+Meilleur des Envoyés
+113.Fais qu'elle soit pour ta noble Face ,Oh Seigneur ,Oh Doux, Oh Clément Miséricordieux
+114.Ne délaisse pas [Oh lecteur] la mémorisation de cette versification par ma qualité d'être
+jeune en âge dans un pays non-arabe
+115.Certes,c'est Allah qui privilégie par ses dons qui Il veut. Certes Allah est le Pourvoyeur
+des Dons Immenses et est Celui qui a la Volonté
+116.C'est dans cette optique magnifique que le Serviteur de Tahaa ,le Malékite en l'occurrence
+le Saint nommé Ahmad [Bamba] a dit:
+117.Ce n'est pas la noirceur de la peau qui est facteur de l'idiotie et la mauvaise
+compréhension d'un homme
+118.Oh Seigneur, Oh Seigneur par la Grâce du Guide (Al Hadi) ,éloigne de nous le mal de
+tout ennemi
+119.Pourvoie-nous une parfaite gnose et (satisfait) nos ambitions par la Grâce du Meilleur [de
+la Tribu ] des Adnan
+120.Dissimule nos défauts par ta belle discrétion et dompte nos ennemis par ta Force
+Majestueuse
+121.Louange à Allah qui a facilité ma versification ,c'est Lui vraiment le Seigneur Digne de
+louange
+122.Puisse que la Prière accompagnée d'un Salut soient au Prophète Le Choisi (Al
+Moustapha),le Meilleur des Hommes
+123.A lui, à sa famille, aux compagnons vertueux tant que tout patient obtient la gnose (al
+ma'rifa).
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lettre de Sidi Ahmed Tijani (qu’Allah l’agrée) aux disciples
+
+
+Louange à Allah – qu’Il soit magnifié et exalté –, Sa grandeur est immense, Sa puissance est élevée, Sa majesté est sanctifiée. Cet écrit est adressé à l’ensemble des disciples de Fès et du Maghreb. Que la Paix soit sur vous ainsi que la miséricorde et la bénédiction d’Allah et que tout cela s’étende sur vous aussi longtemps que perdure le royaume d’Allah.
+
+Du pauvre serviteur en Allah, Ahmed ibn Mohamed Tidjani :
+
+Nous demandons à Allah, que Sa puissance soit magnifiée et que Son immensité soit élevée, qu’Il vous regarde tous par l’œil de l’amour et de l’agrément, par celui de l’attention et de l’inondation de grâce, par celui de l’élection et du choix. Que tout le bien de la religion, de ce bas-monde et de l’au-delà vous soit accordé autant que possible, que tous les maux touchant la religion, ce bas-monde et l’au-delà soient écartés de vous et qu’Il vous en protège, jusqu’à ce qu’Il ne laisse aucun péché, petit ou grand, sans l’avoir immergé dans l’océan de Son pardon et de Sa générosité, afin qu’Il n’ait plus de réclamation relative à vos péchés.
+
+Qu’Il ne laisse aucune demande ou besoin, n’étant pas dans sa désobéissance, qui ne soit vite exaucé. Qu’Il vous prête main-forte dans ce qui vous est prédestiné ; si cela n’est pas en accord avec ce qui est prédestiné, qu’Il remplace toutes ces demandes par ce qui est meilleur et plus élevé. Qu’Il ne laisse aucun mal d’entre les maux provenant des mains des créatures, sans que ne s’interpose un soldat appartenant à Sa puissance et Sa souveraineté, si cela ne va pas à l’encontre de la prédestinée ; si cela va à son encontre, je demande à Allah qu’Il vous accorde Son entière douceur, Son aide, Sa facilité jusqu’à ce que ces maux vous soient ôtés et vous laissent ainsi en sûreté.
+
+
+Je vous recommande, ainsi qu’à moi, de craindre Allah et de prendre garde à ce qu’Il ne vous surprenne point dans le péché car, certes, pour chaque péché, le serviteur subira deux malheurs qu’il ne pourra éviter. Un malheur dans ce bas-monde et un malheur dans l’au-delà. Le malheur dans l’au-delà surviendra sans aucun doute, à moins que ne lui succède le pardon d’Allah – qu’Il soit exalté. Le malheur dans ce bas-monde surviendra aussi assurément pour toute personne ayant commis un péché, à moins qu’il ne repousse ce malheur par l’aumône envers un pauvre, par une dépense dans le cadre des relations familiales ou par le fait de s’acquitter des dettes de l’endetté ou encore d’effacer une dette qui lui revenait.
+
+Si rien de tout cela n’est accompli, alors le malheur frappera le serviteur. Donc, garde-toi et garde-toi encore de désobéir à l’ordre d’Allah. Si jamais il y a eu désobéissance, et le serviteur n’est pas infaillible, il faut se précipiter vers le repentir et le retour à Allah. Si cela n’est pas fait rapidement, le serviteur doit savoir qu’il est en train de perdre son estime auprès du Vrai. Dans cette situation, il est exposé à la colère d’Allah, à moins qu’à cause de son péché il ne ressente en permanence en son cœur qu’il la mérite, et à condition qu’Allah lui accorde Son pardon. Il en a donc le cœur brisé, conscient de sa chute et de la déchéance de son nafs, sans aucune arrogance de sa part. Le serviteur est alors dans la voie du bien tant qu’il se trouve dans cet état.
+
+Prenez garde ! Nous cherchons protection auprès d’Allah contre le fait de se sentir à l’abri de Sa ruse en ce qui concerne nos péchés, et de se sentir en sûreté face à Son blâme. Certes, pour celui qui demeure longtemps dans cet état vis-à-vis d’Allah, cela est une preuve qu’il va mourir mécréant, et l’on cherche protection auprès d’Allah. Sachez que tout ce que vous apprendrez sur les particularités de ce Ouird est véridique et arrivera certainement. Donc prenez garde à sa négligence, même si ce n’est qu’une fois dans la vie. La condition du Ouird est de préserver les prières en groupe, conformément à la Loi (chari’a). Encore une fois, méfiez-vous de vous croire à l’abri de la ruse d’Allah dans le fait de commettre des péchés car, certes, cela est source de perdition. Ne rompez pas vos relations avec l’ensemble des créatures, mais particulièrement avec vos frères. Aussi, visitez-vous pour Allah, nouez des relations pour Allah et donnez à manger pour Allah autant que possible, sans difficulté ni gêne.
+
+Vous devez patienter sous l’ordre d’Allah pendant que surviennent les épreuves et les malheurs. Ce bas-monde est la demeure de la mise à l’épreuve et des malheurs, similaires aux vagues de la mer. En effet, Allah n’a fait descendre le fils d’Adam en ce monde que pour qu’il se heurte aux tentations et aux épreuves. Ainsi, il n’y a aucun espoir pour le fils d’Adam d’éloigner cela de lui, tant qu’il vit dans ce bas-monde. Aussi faut-il patienter dans toutes les situations autant que faire se peut. Lorsqu’une épreuve ou un malheur s’abat, consolez-vous en vous disant que ce monde n’a été créé et érigé que pour cela, l’être humain n’y a été descendu qu’en vue de cette affaire et tout le monde galope sur la même piste. Sachez alors que vous êtes comparable à quiconque d’entre vous.
+
+Sachez qu’à notre époque, personne ne peut se prémunir des péchés, car ils se déversent sur les gens comme une pluie abondante. Aussi, multipliez ce qui permet de les expier, et parmi ce qui y répond il y a Salat Fatihi. En effet, aucun péché isolé ou regroupé ne lui échappe, comme également la prière de glorification (Salat Tasbih) et l’évocation suivante que l’on doit répéter tous les jours trois fois : « Ô mon Seigneur ! Ton absolution est plus vaste que mes péchés et j’ai plus d’espoir en Ta miséricorde qu’en mes œuvres. »
+
+Il y a aussi ce que l’on doit répéter nuit et jour et qui est :
+
+« Il n’y a de divinité qu’Allah et Allah est le plus grand.
+
+Il n’y a de divinité qu’Allah, Seul.
+
+Il n’y a de divinité qu’Allah, Il n’a aucun associé.
+
+Il n’y a de divinité qu’Allah, à Lui la royauté et à Lui la louange.
+
+Il n’y a de divinité qu’Allah et il n’y a de puissance et de force qu’en Allah le Très-Haut, l’Immense. »
+
+II y a aussi Hisbou Saïfi pour celui qui peut le préserver et autres formules de ce genre.
+
+Et cette formule de demande de pardon :
+
+« Ô Allah ! Je Te demande pardon pour tout péché dont je me suis repenti auprès de Toi et que j’ai recommencé. Et je Te demande pardon pour tout ce que je T’ai promis mais dont je n’ai pas tenu l’engagement. Et je Te demande pardon pour toute œuvre par laquelle j’ai cherché Ton visage mais dans laquelle je T’ai mélangé avec autrui. Et je Te demande pardon pour chaque bienfait que Tu m’as accordé et que j’ai utilisé dans Ta désobéissance. Et je Te demande pardon, ô Connaisseur du caché et de l’apparent, pour tout péché que j’ai accompli dans la clarté du jour ou l’obscurité de la nuit, en assemblée ou isolé, caché ou en public, ô le Bienveillant. »
+
+Ainsi que l’invocation : « Ô Celui qui a fait apparaître le beau et cacher le laid… »
+
+Recevez la bonne nouvelle que, certes, toute personne qui meurt en notre amour sera ressuscitée parmi les gens du Salut, quelle que soit sa situation et tant qu’elle ne se croit pas à l’abri de la ruse d’Allah. De même, tous ceux ayant adopté notre Ouird seront ressuscités parmi les gens du Salut, ils entreront au Paradis sans être jugés et sans subir de châtiment, eux, leurs parents, leurs femmes, leurs enfants mais pas leurs petits-enfants ; à la condition cependant de croire, de ne pas renier notre amour et de ne pas se sentir à l’abri de la ruse d’Allah comme nous l’avons précédemment évoqué. Ainsi, ils seront les voisins du Prophète (que la prière et la paix d’Allah soient sur lui) dans les plus hauts degrés du ‘Illiyine et seront en sûreté de l’instant de leur mort jusqu’à leur entrée au Paradis.
+
+Et que la paix et la miséricorde d’Allah soient sur vous ainsi que Sa bénédiction.
+
+Texte tiré et traduit de Djawahirou-l-Ma’ani
+
+Recherche et traduction par la Zaouiya Tidjaniya El Koubra d’Europe

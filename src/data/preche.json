@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "titre": "Discours de 1978",
+    "predicateur": "Mawlana Cheikh Ould Khayri",
+    "date": "25 août 1978",
+    "duree": "36 min",
+    "serie": "Partie 1",
+    "resume": "Cheikh Ould Khayri rappelle les quatre principes de la Sourate Al-Asr et la mission des adeptes de la Fayda Tijaniyya.",
+    "description": "Prononcé à Medina Baye lors du dernier vendredi de Ramadan",
+    "youtube": "https://www.youtube.com/embed/sa3K6JThkY4?si=q5ov-uOoI40zgbfI"
+  },
+  {
+    "id": 2,
+    "titre": "Discours de 1978",
+    "predicateur": "Mawlana Cheikh Ould Khayri",
+    "date": "25 août 1978",
+    "duree": "36 min",
+    "serie": "Partie 2",
+    "resume": "Cheikh Ould Khayri rappelle les quatre principes de la Sourate Al-Asr et la mission des adeptes de la Fayda Tijaniyya.",
+    "description": "Prononcé à Medina Baye lors du dernier vendredi de Ramadan",
+    "youtube": "https://www.youtube.com/embed/OD9TM5JqAzQ?si=w6-wcA3RYbl-eP56"
+  },
+  {
+    "id": 3,
+    "titre": "Discours de 1978",
+    "predicateur": "Mawlana Cheikh Ould Khayri",
+    "date": "25 août 1978",
+    "duree": "36 min",
+    "serie": "Partie 3",
+    "resume": "Cheikh Ould Khayri rappelle les quatre principes de la Sourate Al-Asr et la mission des adeptes de la Fayda Tijaniyya.",
+    "description": "Prononcé à Medina Baye lors du dernier vendredi de Ramadan",
+    "youtube": "https://www.youtube.com/embed/rNIni2-RZyM?si=uNGNOB-SrFY4ApS6"
+  },
+  {
+    "id": 4,
+    "titre": "Discours de 1978",
+    "predicateur": "Mawlana Cheikh Ould Khayri",
+    "date": "25 août 1978",
+    "duree": "36 min",
+    "serie": "Partie 4",
+    "resume": "Cheikh Ould Khayri rappelle les quatre principes de la Sourate Al-Asr et la mission des adeptes de la Fayda Tijaniyya.",
+    "description": "Prononcé à Medina Baye lors du dernier vendredi de Ramadan",
+    "youtube": "https://www.youtube.com/embed/dGFT2PI58tc?si=YNyvsj51QbV9PJuN"
+  },
+  {
+    "id": 5,
+    "titre": "Discours de 1978",
+    "predicateur": "Mawlana Cheikh Ould Khayri",
+    "date": "25 août 1978",
+    "duree": "36 min",
+    "serie": "Partie 5",
+    "resume": "Cheikh Ould Khayri rappelle les quatre principes de la Sourate Al-Asr et la mission des adeptes de la Fayda Tijaniyya.",
+    "description": "Prononcé à Medina Baye lors du dernier vendredi de Ramadan",
+    "youtube": "https://www.youtube.com/embed/9n1a0I_Ptoc?si=A0hruLe-UXdqEOnR"
+  }
+]

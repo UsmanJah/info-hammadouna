@@ -1,0 +1,394 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "annee": 2025,
+      "title": "Gamou Kourale",
+      "description": "Situé dans la région de Koulikoro, à la périphérie sud-est de Bamako. Kouralé accuil un Gamou connu pour son ambiance spirituelle unique, où les participants se rassemblent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. ",
+      "lieu": "Mali Koulikoro",
+      "date": "18/10/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 2,
+      "annee": 2025,
+      "title": "Gamou Dialakorobougou",
+      "description": "Le Gamou de Dialakorobougou est un événement religieux majeur qui se déroule dans la région de Koulikoro, au Mali. Il attire des de fidèles, venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté musulmane locale.",
+      "lieu": "Mali",
+      "date": "01/11/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 3,
+      "annee": 2025,
+      "title": "Gamou Guinee Conakry",
+      "description": " Le Gamou de Guinée Conakry est un événement religieux majeur qui se déroule dans la capitale, Conakry. Il attire des milliers de fidèles venus de tout le pays pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté musulmane.",
+      "lieu": "Guinée Conakry",
+      "date": "08/11/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 4,
+      "annee": 2025,
+      "title": "Gamou de Kayo",
+      "description": "Le Gamou de Kayo est un événement religieux majeur qui se déroule dans la région de Koulikoro, au Mali. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Mali Koulikoro",
+      "date": "15/11/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 5,
+      "annee": 2025,
+      "title": "Gamou Taliko",
+      "description": "Le Gamou de Taliko est un événement religieux majeur qui se déroule dans la région de Koulikoro, au Mali. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté musulmane locale.",
+      "lieu": "Mali",
+      "date": "29/11/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 6,
+      "annee": 2025,
+      "title": "Gamou Richard Toll",
+      "description": "Le Gamou de Richard Toll est un événement religieux majeur qui se déroule dans la ville de Richard Toll, au nord du Sénégal. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité",
+      "lieu": "Richard Toll",
+      "date": "06/12/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 7,
+      "annee": 2025,
+      "title": "Gamou Djelibougou",
+      "description": "Le Gamou de Djelibougou est un événement religieux majeur qui se déroule au Mali. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté.",
+      "lieu": "Mali",
+      "date": "13/12/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 8,
+      "annee": 2025,
+      "title": "Gamou Thiadiaye",
+      "description": "Le Gamou de Thiadiaye est un événement religieux majeur qui se déroule dans la ville de Thiadiaye, à l'Ouest du Sénégal. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Thiadiaye",
+      "date": "20/12/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 9,
+      "annee": 2025,
+      "title": "Gamou Tambacounda",
+      "description": "Le Gamou de Tambacounda est un événement religieux majeur qui se déroule dans la ville de Tambacounda, à L'Est au Sénégal. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Tambacounda",
+      "date": "31/12/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 10,
+      "annee": 2026,
+      "title": "Mawlid Nabi a Divo",
+      "description": "Le Mawlid Nabi a Divo est un événement religieux majeur qui se déroule dans la ville de Divo, en Côte d'Ivoire. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Mawlid, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Côte d'Ivoire",
+      "date": "A déterminer",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 11,
+      "annee": 2026,
+      "title": "Gamou Taiba Niassene",
+      "description": "Le Gamou de Taiba Niassene est un événement religieux majeur qui se déroule dans la ville de Taiba Niassene, au Sénégal. Il attire des fidèles venus pour célébrer la naissance Cheikh Ibrahima NIASS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Taiba Niassene",
+      "date": "04/01/2026",
+      "heure": "17h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 12,
+      "annee": 2026,
+      "title": "Ismou Taiba a Medina Baye",
+      "description": "L'Ismou de Taiba à Medina Baye est un événement religieux majeur qui se déroule dans la ville de Medina Baye, au Sénégal, chez Thierno Amath Ndiaye. Il attire des fidèles venus pour célébrer le baptême de Cheikh Ibrahima NIASS. Pendant l'Ismou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Medina Baye",
+      "date": "10/01/2026",
+      "heure": "",
+      "category": "Ismou"
+    },
+    {
+      "id": 13,
+      "annee": 2026,
+      "title": "Takoussanou Mawlana Cheikh Ould Khairy",
+      "description": "Le Takoussanou de Mawlana Cheikh Ould Khairy est un événement religieux majeur qui se déroule dans la ville de Rufisque, au Sénégal. Il attire des fidèles venus pour célébrer Cheikh Ould Khairy. Pendant cette cérémonie, les disciples se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Cité Taco Rufisque 2",
+      "date": "17/01/2026",
+      "heure": "16h00",
+      "category": "Takoussan"
+    },
+    {
+      "id": 14,
+      "annee": 2026,
+      "title": "Gamou Ngayene Sabbakh",
+      "description": "Ngayène Sabakh est une commune rurale située dans le département de Nioro du Rip, au sein de la région de Kaolack, au Sénégal. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Ngayene Sabbakh",
+      "date": "24/01/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 15,
+      "annee": 2026,
+      "title": "Gamou Mbambi Toucouleur",
+      "description": "Mbambi Toucouleur est une localité au Sénégal. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète RSWS et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Mbambi",
+      "date": "31/01/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 16,
+      "annee": 2026,
+      "title": "Ziarra Baye Niasse",
+      "description": "La Ziarra de Baye Niasse est un événement religieux majeur qui se déroule dans la ville de Kaolack, au Sénégal. Il attire des fidèles venus pour célébrer Cheikh Ibrahima NIASS. Pendant la Ziarra, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète RSWS et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Kaolack",
+      "date": "13/02/2026",
+      "heure": "09h00",
+      "category": "Ziarra"
+    },
+    {
+      "id": 17,
+      "annee": 2026,
+      "title": "Ziarra Thierno Amath Ndiaye",
+      "description": "La Ziarra de Thierno Amath Ndiaye est un événement religieux majeur qui se déroule à Guédiawaye au cité Douane, Dakar, Sénégal. Les disciples se réunissent pour célébrer Thierno Amath Ndiaye. Pendant la Ziarra, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète RSWS et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Guédiawaye",
+      "date": "07/02/2026",
+      "heure": "19h00",
+      "category": "Ziarra"
+    },
+    {
+      "id": 18,
+      "annee": 2025,
+      "title": "Gamou Koungheul",
+      "description": "Le Gamou de Koungheul est un événement religieux majeur qui se déroule dans la ville de Koungheul, au centre du Sénégal. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Koungheul",
+      "date": "30/12/2025",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 19,
+      "annee": 2026,
+      "title": "Début Ramadan",
+      "description": " Le Ramadan est le neuvième mois du calendrier islamique, considéré comme un mois sacré pour les musulmans du monde entier. C'est une période de jeûne, de prière, de réflexion et de communauté. Pendant le Ramadan, les musulmans s'abstiennent de manger, de boire, de fumer et d'avoir des relations sexuelles de l'aube au coucher du soleil. C'est un moment de purification spirituelle, de renforcement de la foi et de solidarité avec les moins fortunés. Le Ramadan se termine par la célébration de l'Aïd al-Fitr, une fête joyeuse marquant la fin du jeûne.",
+      "lieu": "-",
+      "date": "18/02/2026",
+      "heure": "",
+      "category": "Ramadan"
+    },
+    {
+      "id": 20,
+      "annee": 2026,
+      "title": "Laylatoul Khadri",
+      "description": " Laylatoul Khadri, également connue sous le nom de Nuit du Destin, est une nuit sacrée dans l'Islam qui se produit pendant le mois de Ramadan. C'est la nuit où le Coran a été révélé au Prophète Muhammad RSWS par l'archange Gabriel. Les musulmans croient que les prières et les bonnes actions accomplies pendant cette nuit sont particulièrement bénies et récompensées. C'est un moment de grande spiritualité, de prière intense et de réflexion pour les musulmans du monde entier.",
+      "lieu": "Medina Baye",
+      "date": "17/03/2026",
+      "heure": "21h00",
+      "category": "Laylatoul Khadri"
+    },
+    {
+      "id": 21,
+      "annee": 2026,
+      "title": "Gamou Keur Amath Ngone",
+      "description": "Keur Amath Ngone est une localité située au Sénégal, plus précisément dans la région de Kaolack. Son Gamou est un événement religieux majeur. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Keur Amath Ngone",
+      "date": "04/04/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 22,
+      "annee": 2026,
+      "title": "Conférence Annuelle de Thioffior",
+      "description": "Conférence Annuelle de Thioffior. Des érudits renommés se réunissent pour partager leurs connaissances et inspirer les participants à approfondir leur compréhension de la religion.",
+      "lieu": "Thioffior",
+      "date": "11/04/2026",
+      "heure": "19h00",
+      "category": "Conférence"
+    },
+    {
+      "id": 23,
+      "annee": 2026,
+      "title": "Gamou Guinee Bissau",
+      "description": "Le Gamou de Guinée Bissau est un événement religieux majeur qui se déroule dans la ville de Guinée Bissau. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Guinée Bissau",
+      "date": "Indéterminée",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 24,
+      "annee": 2026,
+      "title": "Gamou Ziguinchor",
+      "description": "Ziguinchor, la capitale de la région naturelle de la Casamance au sud du Sénégal. IL accueille un événement religieux majeur. Il attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Ziguinchor",
+      "date": "Indéterminée",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 25,
+      "annee": 2026,
+      "title": "Ziarra Boubacar",
+      "description": "Boubacar est le trés célèbre centre spirituel et éducatif (Mahdara) de la Tijaniyya en Mauritanie. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS dans le calendrier gregarien 20 Avril. Pendant la Ziarra, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Boubacar, Mauritanie",
+      "date": "20/04/2026",
+      "heure": "22h00",
+      "category": "Ziarra"
+    },
+    {
+      "id": 26,
+      "annee": 2026,
+      "title": "Ismou Boubacar",
+      "description": " L'Ismou de Boubacar est un événement religieux majeur qui se déroule chez Thierno Amath Ndiaye à Dakar. Il attire des fidèles venus pour célébrer le baptême du prophéte RSWS dans le calendrier gregarien. Pendant l'Ismou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Cité Douane, Guédiawaye",
+      "date": "30/04/2026",
+      "heure": "19h00",
+      "category": "Ismou"
+    },
+    {
+      "id": 27,
+      "annee": 2026,
+      "title": "Ismou Boubakar Wezzindougou",
+      "description": "L'Ismou de Boubakar Wezzindougou est un événement religieux majeur qui se déroule dans la ville de Wezzindougou, au Mali. Il attire des fidèles venus pour célébrer le baptême du prophéte RSWS dans le calendrier gregarien. Pendant l'Ismou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Mali",
+      "date": "02/05/2026",
+      "heure": "",
+      "category": "Ismou"
+    },
+    {
+      "id": 28,
+      "annee": 2026,
+      "title": "Gamou Passi",
+      "description": "Passi est une commune du Sénégal, situé dans le Sine-Saloum au centre Ouest. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Passi",
+      "date": "02/05/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 29,
+      "annee": 2026,
+      "title": "Tabaski",
+      "description": "L'Aïd al-Adha, également connue sous le nom de Tabaski, est une fête religieuse majeure dans l'Islam qui commémore la volonté d'Abraham de sacrifier son fils en obéissance à Dieu. Pendant cette fête, les musulmans du monde entier se réunissent pour prier, partager des repas festifs et accomplir des actes de charité. C'est un moment de grande spiritualité, de solidarité et de célébration pour la communauté musulmane.",
+      "lieu": "-",
+      "date": "27/05/2026",
+      "heure": "",
+      "category": "Tabaski"
+    },
+    {
+      "id": 30,
+      "annee": 2026,
+      "title": "Conférence Mbambi Toucouleur",
+      "description": "La Conférence de Mbambi Toucouleur est un événement religieux majeur qui se déroule dans la localité de Mbambi, au Sénégal. Elle attire des érudits renommés et des fidèles venus pour approfondir leur compréhension de la religion. Pendant la conférence, les participants assistent à des discours inspirants, participent à des discussions enrichissantes et partagent des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté locale.",
+      "lieu": "Mbambi",
+      "date": "30/05/2026",
+      "heure": "",
+      "category": "Conférence"
+    },
+    {
+      "id": 31,
+      "annee": 2026,
+      "title": "Gamou Diouf Notto",
+      "description": "Baba Diouf est disciple de Thierno Amath Ndiaye dont la renommée a suivi les actions. Il accueille un événement religieux majeur dans sa localité à Notto qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Diouf Notto",
+      "date": "06/06/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 32,
+      "annee": 2026,
+      "title": "Gamou Serigne Dara Mbaye Niasse",
+      "description": "Serigne Dara Mbaye Niasse est maitre coranique et est Mouhadam de Thierno Hamath Ndiaye. Il accueille un événement religieux majeur chez lui qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Chez Serigne Dara Mbaye Niasse",
+      "date": "27/06/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 33,
+      "annee": 2026,
+      "title": "Gamou Thies",
+      "description": "Thiès est une ville du Sénégal, située à environ 70 kilomètres à l'est de Dakar. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté locale.",
+      "lieu": "Thiès",
+      "date": "04/07/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 34,
+      "annee": 2026,
+      "title": "Gamou Serigne Faye",
+      "description": " Sérigne Faye est un disciple de Thierno Amath Ndiaye. Il accueille un événement religieux majeur chez lui qui attire des fidèles venus pour célébrer la naissance du Prophète Muhammad RSWS. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "",
+      "date": "25/07/2026",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 35,
+      "annee": 2026,
+      "title": "Gamou Yamoussoukro Laylatoul Katmiya 1",
+      "description": "Yamoussoukro est la capitale politique et administrative de la Côte d'Ivoire. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la station suprême de Cheikh Tidiane RTAN. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Yamoussoukro",
+      "date": "Juillet 2026 SAFAR",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 36,
+      "annee": 2026,
+      "title": "Gamou Gagnoa Laylatoul Katmiya 2",
+      "description": " Gagnoa est une ville de la Côte d'Ivoire, située dans la région du Gôh. Elle accueille un événement religieux majeur qui attire des fidèles venus pour célébrer la station suprême de Cheikh Tidiane RTAN. Pendant le Gamou, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Gagnoa",
+      "date": "Juillet 2026 SAFAR",
+      "heure": "19h00",
+      "category": "Gamou"
+    },
+    {
+      "id": 37,
+      "annee": 2026,
+      "title": "Conférence Fass Cheikh Tidiane",
+      "description": "La Conférence de Fass Cheikh Tidiane est un événement religieux majeur qui se déroule dans le célébre quartier Fass Cheikh Tidian. Elle attire des érudits renommés et des fidèles venus pour approfondir leur compréhension de la religion. Pendant la conférence, les participants assistent à des discours inspirants, participent à des discussions enrichissantes et partagent des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté locale.",
+      "lieu": "Fass",
+      "date": "25/08/2026",
+      "heure": "",
+      "category": "Conférence"
+    },
+    {
+      "id": 38,
+      "annee": 2026,
+      "title": "Grand Gamou Medina Baye",
+      "description": "Le Mawlid est une célébration de la naissance du Prophète Muhammad RSWS. C'est un événement religieux majeur qui se déroule dans de nombreuses régions du monde musulman. Pendant le Mawlid, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité pour la communauté musulmane.",
+      "lieu": "",
+      "date": "26/08/2026",
+      "heure": "10h00",
+      "category": "Grand Gamou"
+    },
+    {
+      "id": 39,
+      "annee": 2025,
+      "title": "Conférence Cheikh Abdoulaye Sokhna a Daroul Habib",
+      "description": "Abdoulaye Sokhna est un érudit renommé et un conférencier respecté dans la  Hadara de Thierno Amath Ndiaye. Il est connu pour sa profonde connaissance de la religion et sa capacité à transmettre des enseignements spirituels de manière claire et inspirante. La conférence de Cheikh Abdoulaye Sokhna à Daroul Habib est un événement religieux majeur qui attire des fidèles venus pour écouter ses enseignements et approfondir leur compréhension de la religion. Pendant la conférence, les participants se réunissent pour prier, écouter des sermons religieux, chanter des louanges au Prophète et partager des repas traditionnels. C'est un moment de grande spiritualité et de fraternité.",
+      "lieu": "Daroul Habib",
+      "date": "02/09/2025",
+      "heure": "-",
+      "category": "Conférence"
+    }
+  ]
+}
