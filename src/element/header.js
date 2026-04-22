@@ -134,7 +134,7 @@ function Header() {
     setLoading(true);
     setError(null);
     try {
-      const url = `http://178.18.250.88:8080/api/prayer-times?country=${encodeURIComponent(
+      const url = `https://info-fastapi.vercel.app/api/prayer-times?country=${encodeURIComponent(
         selectedCountry.country
       )}&city=${encodeURIComponent(city.trim())}&timezone=${encodeURIComponent(selectedTimezone)}`;
       const res = await fetch(url);
