@@ -1,8 +1,13 @@
 import { useState } from "react";
-import preches from "../data/preche.json";
+import data1 from "../data/preche.json";
+import data2 from "../data/preche-jour.json";
+
+// ── Données issues du JSON ──
+const preches            = data1;           // ✅ tableau direct → pas de clé .featured
+const prechesJournaliers = data2.journaliers; // ✅ objet → clé .journaliers correcte
 
 /* ══════════════════════════════════════
-   Islamic geometry SVGs (design system)
+   Islamic geometry SVGs
 ══════════════════════════════════════ */
 function IslamicStar({ size = 60, color = "#22c55e", opacity = 0.18 }) {
   const s = size / 2;
@@ -11,11 +16,7 @@ function IslamicStar({ size = 60, color = "#22c55e", opacity = 0.18 }) {
     const r = i % 2 === 0 ? s * 0.95 : s * 0.42;
     return `${s + r * Math.cos(angle)},${s + r * Math.sin(angle)}`;
   }).join(" ");
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ opacity }}>
-      <polygon points={pts} fill={color} />
-    </svg>
-  );
+  return <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ opacity }}><polygon points={pts} fill={color} /></svg>;
 }
 function Star12({ size = 80, color = "#22c55e", opacity = 0.13 }) {
   const s = size / 2;
@@ -24,11 +25,7 @@ function Star12({ size = 80, color = "#22c55e", opacity = 0.13 }) {
     const r = i % 2 === 0 ? s * 0.95 : s * 0.5;
     return `${s + r * Math.cos(angle)},${s + r * Math.sin(angle)}`;
   }).join(" ");
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ opacity }}>
-      <polygon points={pts} fill={color} />
-    </svg>
-  );
+  return <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ opacity }}><polygon points={pts} fill={color} /></svg>;
 }
 function GeomTile({ size = 90, color = "#22c55e", opacity = 0.1 }) {
   return (
@@ -44,11 +41,7 @@ function GeomTile({ size = 90, color = "#22c55e", opacity = 0.1 }) {
   );
 }
 function Crescent({ size = 50, color = "#22c55e", opacity = 0.2 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 50 50" style={{ opacity }}>
-      <path d="M25 5 A20 20 0 1 1 25 45 A14 14 0 1 0 25 5 Z" fill={color} />
-    </svg>
-  );
+  return <svg width={size} height={size} viewBox="0 0 50 50" style={{ opacity }}><path d="M25 5 A20 20 0 1 1 25 45 A14 14 0 1 0 25 5 Z" fill={color} /></svg>;
 }
 function LeftDecor() {
   return (
@@ -84,10 +77,221 @@ function RightDecor() {
 }
 
 /* ══════════════════════════════════════
+   Carte prêche journalier
+══════════════════════════════════════ */
+function JournalierCard({ p, color, onPlay }) {
+  return (
+    <div
+      className="j-card relative flex items-center overflow-hidden rounded-2xl bg-white cursor-pointer"
+      style={{ border: `1.5px solid ${color}20`, boxShadow: "0 2px 14px rgba(15,119,85,.07)" }}
+      onClick={() => onPlay(p)}
+    >
+      {/* Thumbnail */}
+      <div
+        className="flex flex-col items-center justify-center gap-1.5 flex-shrink-0"
+        style={{ width: 88, height: 80, background: `linear-gradient(140deg,${color} 0%,${color}aa 100%)` }}
+      >
+        <div className="flex items-center justify-center rounded-full"
+          style={{ width: 30, height: 30, background: "#fff", boxShadow: `0 3px 10px ${color}44` }}>
+          <span style={{ fontSize: 10, color, fontWeight: 700, marginLeft: 2 }}>▶</span>
+        </div>
+        <span style={{ color: "rgba(255,255,255,.7)", fontSize: 9, fontWeight: 500 }}>{p.duree}</span>
+      </div>
+
+      {/* Texte */}
+      <div className="flex-1 px-3 py-3 min-w-0">
+        <h4 className="truncate text-sm font-semibold mb-0.5"
+          style={{ fontFamily: "'Fraunces',serif", color: "#0D2B1F", fontSize: 13.5 }}>
+          {p.titre}
+        </h4>
+        <p className="text-xs mb-1" style={{ color: "#7aaa92" }}>{p.predicateur} · {p.date}</p>
+        <p className="text-xs leading-snug"
+          style={{ color: "#2E6B52", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+          {p.resume}
+        </p>
+      </div>
+
+      {/* Vues */}
+      <div className="pr-3 flex-shrink-0">
+        <span className="text-xs" style={{ color: "#7aaa92" }}>👁 {p.vues}</span>
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════
+   Modal lecteur vidéo
+══════════════════════════════════════ */
+function VideoModal({ preche, onClose }) {
+  if (!preche) return null;
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: "rgba(10,30,15,.75)", backdropFilter: "blur(6px)", animation: "fadeIn .2s ease both" }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full rounded-2xl overflow-hidden"
+        style={{ maxWidth: 700, boxShadow: "0 24px 80px rgba(15,119,85,.3)", animation: "popUp .3s cubic-bezier(.22,1,.36,1) both" }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 py-4"
+          style={{ background: "linear-gradient(135deg,#0F7755,#07402c)" }}>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "#46D67A" }}>
+              Prêche journalier
+            </p>
+            <h3 style={{ fontFamily: "'Fraunces',serif", fontSize: 18, fontWeight: 600, color: "#fff" }}>
+              {preche.titre}
+            </h3>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,.55)" }}>
+              {preche.predicateur} · {preche.date} · {preche.duree}
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex items-center justify-center rounded-full text-white font-bold"
+            style={{ width: 34, height: 34, background: "rgba(255,255,255,.15)", border: "1px solid rgba(255,255,255,.2)", cursor: "pointer", fontSize: 16 }}
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Vidéo 16:9 */}
+        <div style={{ position: "relative", paddingTop: "56.25%", background: "#000" }}>
+          <iframe
+            src={`${preche.youtube}?autoplay=1`}
+            title={preche.titre}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════
+   Vue Prêches Journaliers
+══════════════════════════════════════ */
+function VueJournaliers() {
+  const [activeTheme, setActiveTheme] = useState(0);
+  const [modalPreche, setModalPreche] = useState(null);
+  const theme = prechesJournaliers[activeTheme];
+
+  return (
+    <div style={{ animation: "fadeUp .4s cubic-bezier(.22,1,.36,1) both" }}>
+
+      {/* Info banner */}
+      <div className="flex items-center gap-3 mb-6 px-4 py-3 rounded-2xl"
+        style={{ background: "rgba(15,119,85,.06)", border: "1px solid rgba(15,119,85,.15)" }}>
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "#0D2B1F" }}>Prêches du jour</p>
+          <p className="text-xs" style={{ color: "#7aaa92" }}>
+            Courtes interventions quotidiennes · organisées par thème · bientôt alimentées depuis notre back-end
+          </p>
+        </div>
+        <div className="ml-auto flex-shrink-0">
+          <span className="text-xs font-bold px-2.5 py-1 rounded-full"
+            style={{ background: "rgba(70,214,122,.15)", color: "#0F7755", border: "1px solid rgba(70,214,122,.3)" }}>
+            {prechesJournaliers.reduce((acc, t) => acc + t.preches.length, 0)} vidéos
+          </span>
+        </div>
+      </div>
+
+      {/* Onglets thèmes */}
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+        {prechesJournaliers.map((t, i) => (
+          <button
+            key={i}
+            onClick={() => setActiveTheme(i)}
+            className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap flex-shrink-0 theme-tab"
+            style={{
+              background: activeTheme === i ? t.couleur : "white",
+              color: activeTheme === i ? "white" : "#0D2B1F",
+              border: activeTheme === i ? `1.5px solid ${t.couleur}` : "1.5px solid #D4F0E2",
+              boxShadow: activeTheme === i ? `0 4px 14px ${t.couleur}44` : "0 2px 8px rgba(0,0,0,.05)",
+              transition: "all .18s ease",
+              cursor: "pointer",
+            }}
+          >
+            <span>{t.emoji}</span>
+            {t.theme}
+            <span
+              className="text-xs px-1.5 py-0.5 rounded-full font-semibold"
+              style={{
+                background: activeTheme === i ? "rgba(255,255,255,.25)" : "rgba(15,119,85,.08)",
+                color: activeTheme === i ? "white" : "#0F7755",
+              }}
+            >
+              {t.preches.length}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      {/* Titre du thème actif */}
+      <div className="flex items-center gap-3 mb-4">
+        <div
+          className="flex items-center justify-center rounded-xl text-lg"
+          style={{ width: 40, height: 40, background: `${theme.couleur}15`, border: `1px solid ${theme.couleur}30` }}
+        >
+          {theme.emoji}
+        </div>
+        <div>
+          <h3 style={{ fontFamily: "'Fraunces',serif", fontSize: 18, fontWeight: 600, color: "#0D2B1F" }}>
+            {theme.theme}
+          </h3>
+          <p className="text-xs" style={{ color: "#7aaa92" }}>
+            {theme.preches.length} prêche{theme.preches.length > 1 ? "s" : ""} dans ce thème
+          </p>
+        </div>
+      </div>
+
+      {/* Liste des prêches du thème */}
+      <div className="flex flex-col gap-3">
+        {theme.preches.map((p, i) => (
+          <div key={p.id} style={{ animation: `slideIn .35s cubic-bezier(.22,1,.36,1) both`, animationDelay: `${i * 60}ms` }}>
+            <JournalierCard p={p} color={theme.couleur} onPlay={setModalPreche} />
+          </div>
+        ))}
+      </div>
+
+      {/* Placeholder backend */}
+      <div className="mt-8 flex items-center gap-4 px-5 py-4 rounded-2xl"
+        style={{ background: "linear-gradient(135deg,#0F7755,#07402c)", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", right: -10, top: -10, opacity: 0.08 }}>
+          <Star12 size={100} color="#46D67A" opacity={1} />
+        </div>
+        <span style={{ fontSize: 24 }}>🔧</span>
+        <div className="flex-1 relative z-10">
+          <p className="text-sm font-semibold" style={{ color: "#fff" }}>Back-end en cours de développement</p>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,.55)" }}>
+            Les prêches journaliers seront bientôt ajoutés directement depuis l'interface d'administration.
+          </p>
+        </div>
+        <span className="text-xs font-bold px-3 py-1.5 rounded-full flex-shrink-0 relative z-10"
+          style={{ background: "rgba(70,214,122,.2)", color: "#46D67A", border: "1px solid rgba(70,214,122,.3)", whiteSpace: "nowrap" }}>
+          Bientôt disponible
+        </span>
+      </div>
+
+      {/* Modal */}
+      <VideoModal preche={modalPreche} onClose={() => setModalPreche(null)} />
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════
    Composant principal
 ══════════════════════════════════════ */
 export default function Preche() {
-  // Les données viennent directement du JSON importé
+  // ── Onglet actif : "recents" | "journaliers" ──
+  const [vue, setVue] = useState("recents");
+
+  // ── État prêches récents ──
   const [selected, setSelected] = useState(preches[0]);
   const [playing, setPlaying]   = useState(false);
   const [animKey, setAnimKey]   = useState(0);
@@ -109,8 +313,16 @@ export default function Preche() {
           from { opacity:0; transform:translateY(20px); }
           to   { opacity:1; transform:translateY(0); }
         }
+        @keyframes fadeIn {
+          from { opacity:0; }
+          to   { opacity:1; }
+        }
+        @keyframes popUp {
+          from { opacity:0; transform:scale(.94) translateY(12px); }
+          to   { opacity:1; transform:scale(1) translateY(0); }
+        }
         @keyframes slideIn {
-          from { opacity:0; transform:translateX(-12px); }
+          from { opacity:0; transform:translateX(-10px); }
           to   { opacity:1; transform:translateX(0); }
         }
         .anim-fade-up  { animation: fadeUp  .5s cubic-bezier(.22,1,.36,1) both; }
@@ -130,9 +342,18 @@ export default function Preche() {
         .p-card { transition: all .22s cubic-bezier(.22,1,.36,1); }
         .p-card:active { transform: scale(.99); }
 
+        .j-card { transition: all .2s ease; }
+        .j-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 24px rgba(15,119,85,.12) !important;
+        }
+
         .btn-watch:hover { background: #0a5c41 !important; transform: translateY(-1px); box-shadow: 0 8px 26px rgba(15,119,85,.45) !important; }
-        .btn-share:hover { background: #e6f7ef !important; transform: translateY(-1px); }
+        .btn-share:hover  { background: #e6f7ef !important; transform: translateY(-1px); }
         .btn-watch, .btn-share { transition: all .18s ease; }
+
+        .vue-tab { transition: all .18s ease; }
+        .vue-tab:hover:not(.active-tab) { background: #e6f7ef !important; }
       `}</style>
 
       {/* ════ HEADER ════ */}
@@ -163,9 +384,62 @@ export default function Preche() {
       {/* ════ MAIN ════ */}
       <main className="max-w-3xl mx-auto px-5 pb-20">
 
-        {/* ── Contenu ── */}
-        <>
-            {/* ── Featured player ── */}
+        {/* ── Toggle de vue ── */}
+        <div className="flex items-center gap-2 mb-8 p-1.5 rounded-2xl"
+          style={{ background: "#e8f5ee", border: "1px solid #D4F0E2", width: "fit-content" }}>
+
+          <button
+            onClick={() => setVue("recents")}
+            className="vue-tab flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold"
+            style={{
+              background: vue === "recents" ? "#0F7755" : "transparent",
+              color: vue === "recents" ? "white" : "#0F7755",
+              border: "none",
+              cursor: "pointer",
+              boxShadow: vue === "recents" ? "0 4px 14px rgba(15,119,85,.3)" : "none",
+              fontFamily: "'Plus Jakarta Sans',sans-serif",
+            }}
+          >
+            Ligne directrice
+          </button>
+
+          <button
+            onClick={() => setVue("journaliers")}
+            className="vue-tab flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold"
+            style={{
+              background: vue === "journaliers" ? "#0F7755" : "transparent",
+              color: vue === "journaliers" ? "white" : "#0F7755",
+              border: "none",
+              cursor: "pointer",
+              boxShadow: vue === "journaliers" ? "0 4px 14px rgba(15,119,85,.3)" : "none",
+              fontFamily: "'Plus Jakarta Sans',sans-serif",
+              position: "relative",
+            }}
+          >
+            Prêche journalier
+            {/* Badge "Nouveau" */}
+            <span
+              style={{
+                position: "absolute",
+                top: -6, right: -6,
+                fontSize: 9, fontWeight: 800,
+                background: "#46D67A",
+                color: "#0F7755",
+                padding: "2px 6px",
+                borderRadius: 99,
+                letterSpacing: 0.5,
+                border: "1.5px solid white",
+              }}
+            >
+              DAILY
+            </span>
+          </button>
+        </div>
+
+        {/* ════ VUE : PRÊCHES RÉCENTS ════ */}
+        {vue === "recents" && (
+          <>
+            {/* Featured player */}
             <div
               key={animKey}
               className="anim-fade-up flex flex-wrap rounded-3xl overflow-hidden mb-12 bg-white"
@@ -227,7 +501,7 @@ export default function Preche() {
                 <p className="text-sm leading-relaxed mb-2 flex-grow" style={{ color: "#2E6B52" }}>{selected.resume}</p>
                 <p className="text-xs leading-relaxed mb-6" style={{ color: "#7aaa92" }}>{selected.description}</p>
                 <div className="flex gap-2.5 flex-wrap">
-                  {/* <button className="btn-watch inline-flex items-center gap-2 text-sm font-semibold text-white rounded-xl px-5 py-2.5 border-0 cursor-pointer"
+                  <button className="btn-watch inline-flex items-center gap-2 text-sm font-semibold text-white rounded-xl px-5 py-2.5 border-0 cursor-pointer"
                     style={{ background: "#0F7755", boxShadow: "0 4px 18px rgba(15,119,85,.32)" }}
                     onClick={() => setPlaying(true)}>
                     <span style={{ fontSize: 11 }}>▶</span> Regarder
@@ -235,12 +509,12 @@ export default function Preche() {
                   <button className="btn-share inline-flex items-center gap-1.5 text-sm font-semibold rounded-xl px-4 py-2.5 border cursor-pointer"
                     style={{ color: "#0F7755", background: "transparent", borderColor: "rgba(15,119,85,.3)" }}>
                     ↗ Partager
-                  </button> */}
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* ── Liste ── */}
+            {/* Liste */}
             <div className="flex items-center justify-between mb-4">
               <h2 style={{ fontFamily: "'Fraunces',serif", fontSize: 22, fontWeight: 600, color: "#0D2B1F" }}>
                 Derniers prêches
@@ -267,11 +541,8 @@ export default function Preche() {
                     }}
                     onClick={() => pick(p)}
                   >
-                    {/* Barre active */}
                     <span className="absolute left-0 rounded-r w-1"
                       style={{ top: "50%", transform: "translateY(-50%)", height: 38, background: "#46D67A", opacity: isActive ? 1 : 0, transition: "opacity .2s ease" }} />
-
-                    {/* Thumbnail */}
                     <div className="flex flex-col items-center justify-center gap-1.5 flex-shrink-0"
                       style={{ width: 96, height: 88, background: "linear-gradient(140deg,#0F7755 0%,#07402c 100%)" }}>
                       <div className="flex items-center justify-center rounded-full"
@@ -280,16 +551,12 @@ export default function Preche() {
                       </div>
                       <span style={{ color: "rgba(255,255,255,.55)", fontSize: 10 }}>{p.duree}</span>
                     </div>
-
-                    {/* Texte */}
                     <div className="flex-1 px-4 py-3.5 min-w-0">
                       <p className="text-xs font-bold uppercase tracking-wider mb-0.5" style={{ color: "#46D67A", fontSize: 10 }}>{p.serie}</p>
                       <h3 className="truncate mb-0.5" style={{ fontFamily: "'Fraunces',serif", fontSize: 14.5, fontWeight: 600, color: "#0D2B1F" }}>{p.titre}</h3>
                       <p className="text-xs font-medium mb-1" style={{ color: "#7aaa92" }}>{p.predicateur} · {p.date}</p>
                       <p className="text-xs leading-snug" style={{ color: "#2E6B52", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{p.resume}</p>
                     </div>
-
-                    {/* Meta droite */}
                     <div className="flex flex-col items-end gap-1.5 pr-4 flex-shrink-0">
                       <span className="text-xs" style={{ color: "#7aaa92" }}>👁 {p.vues}</span>
                       {isActive && (
@@ -303,7 +570,11 @@ export default function Preche() {
                 );
               })}
             </div>
-        </>
+          </>
+        )}
+
+        {/* ════ VUE : PRÊCHES JOURNALIERS ════ */}
+        {vue === "journaliers" && <VueJournaliers />}
 
       </main>
     </div>

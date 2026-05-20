@@ -1,0 +1,170 @@
+{
+  "featured": [
+    {
+      "id": 1,
+      "titre": "La force de la foi",
+      "predicateur": "Cheikh Moussa Diallo",
+      "date": "2 mars 2026",
+      "duree": "52 min",
+      "serie": "Fondements",
+      "resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec.",
+      "description": "Une exploration profonde de ce que signifie vivre par la foi au quotidien. Suspendisse lectus tortor, dignissim sit amet.",
+      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+    },
+    {
+      "id": 2,
+      "titre": "Marcher dans la lumière",
+      "predicateur": "Imam Abdoulaye Sow",
+      "date": "23 fév. 2026",
+      "duree": "44 min",
+      "serie": "Lumière & Vérité",
+      "resume": "Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.",
+      "description": "Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.",
+      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+    },
+    {
+      "id": 3,
+      "titre": "Le chemin de la grâce",
+      "predicateur": "Cheikh Omar Ba",
+      "date": "16 fév. 2026",
+      "duree": "61 min",
+      "serie": "Grâce & Miséricorde",
+      "resume": "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum.",
+      "description": "Un message puissant sur la grâce divine. Nam nulla quam, gravida non, commodo a, sodales sit amet.",
+      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+    },
+    {
+      "id": 4,
+      "titre": "Espérance en temps d'épreuve",
+      "predicateur": "Cheikh Moussa Diallo",
+      "date": "9 fév. 2026",
+      "duree": "38 min",
+      "serie": "Fondements",
+      "resume": "Vivamus luctus egestas leo. Maecenas ultrices, ante at feugiat faucibus, velit orci pretium dolor.",
+      "description": "Sed commodo posuere pede. Mauris ut est. Ut quis purus. Sed ac odio. Sed vehicula hendrerit sem.",
+      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      
+    }
+  ],
+  "journaliers": [
+    {
+      "theme": "Spiritualité",
+      "couleur": "#0F7755",
+      "preches": [
+        {
+          "id": "j1",
+          "titre": "La patience — As-Sabr",
+          "predicateur": "Imam Abdoulaye Sow",
+          "date": "Lundi 17 mai 2026",
+          "duree": "12 min",
+          "resume": "La patience est mentionnée plus de 90 fois dans le Coran. Elle est la clé de toute épreuve.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": "j2",
+          "titre": "Le Dhikr au quotidien",
+          "predicateur": "Cheikh Moussa Diallo",
+          "date": "Mardi 18 mai 2026",
+          "duree": "9 min",
+          "resume": "Le souvenir d'Allah est la paix du cœur. Comment intégrer le dhikr dans chaque instant.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+          
+        },
+        {
+          "id": "j3",
+          "titre": "La tawakkul — confiance en Allah",
+          "predicateur": "Cheikh Omar Ba",
+          "date": "Mercredi 19 mai 2026",
+          "duree": "11 min",
+          "resume": "S'en remettre à Allah ne signifie pas ne rien faire. Comprendre la vraie signification de la tawakkul.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    },
+    {
+      "theme": "Famille",
+      "couleur": "#46D67A",
+      "preches": [
+        {
+          "id": "j4",
+          "titre": "Les droits des parents",
+          "predicateur": "Imam Abdoulaye Sow",
+          "date": "Jeudi 20 mai 2026",
+          "duree": "14 min",
+          "resume": "Allah a placé la satisfaction des parents juste après la Sienne. Nos devoirs envers eux.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+          
+        },
+        {
+          "id": "j5",
+          "titre": "Éduquer ses enfants dans l'Islam",
+          "predicateur": "Cheikh Moussa Diallo",
+          "date": "Vendredi 21 mai 2026",
+          "duree": "16 min",
+          "resume": "La première école de l'enfant c'est la maison. Comment transmettre la foi avec amour.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": "j6",
+          "titre": "Le mariage en Islam",
+          "predicateur": "Cheikh Omar Ba",
+          "date": "Samedi 22 mai 2026",
+          "duree": "18 min",
+          "resume": "Le mariage est une moitié de la religion. Ses fondements, ses droits et ses responsabilités.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    },
+    {
+      "theme": "Éthique & Comportement",
+      "couleur": "#0F7755",
+      "preches": [
+        {
+          "id": "j7",
+          "titre": "La sincérité — Al-Ikhlas",
+          "predicateur": "Cheikh Moussa Diallo",
+          "date": "Dimanche 23 mai 2026",
+          "duree": "10 min",
+          "resume": "Allah n'accepte que les actes faits pour Lui seul. Purifier ses intentions au quotidien.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": "j8",
+          "titre": "La langue : bénédiction ou épreuve",
+          "predicateur": "Imam Abdoulaye Sow",
+          "date": "Lundi 24 mai 2026",
+          "duree": "13 min",
+          "resume": "Le Prophète ﷺ a dit : 'Que celui qui croit en Allah garde le silence ou dise du bien.'",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    },
+    {
+      "theme": "Connaissance",
+      "couleur": "#46D67A",
+      "preches": [
+        {
+          "id": "j9",
+          "titre": "Les piliers de l'Islam expliqués",
+          "predicateur": "Cheikh Omar Ba",
+          "date": "Mardi 25 mai 2026",
+          "duree": "20 min",
+          "resume": "Les cinq piliers sont la colonne vertébrale de la pratique islamique. Un rappel essentiel.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": "j10",
+          "titre": "Comprendre la sourate Al-Fatiha",
+          "predicateur": "Cheikh Moussa Diallo",
+          "date": "Mercredi 26 mai 2026",
+          "duree": "15 min",
+          "resume": "Al-Fatiha est la mère du Coran. Méditer sur ses sept versets et leurs significations profondes.",
+          "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    }
+  ]
+}
