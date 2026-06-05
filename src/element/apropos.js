@@ -3,8 +3,8 @@ import AproposImage from "../assets/apropos_image.png";
 
 const stats = [
   { value: "1992", label: "Fondée en" },
-  { value: "1000+", label: "Membres" },
-  { value: "39",   label: "Événements / an" },
+  // { value: "1000+", label: "Membres" },
+  { value: "40",   label: "Événements /an" },
   { value: "43",    label: "Sections" },
 ];
 
