@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useApi, usePost } from "../hooks/useApi";
 
 // ─── API BASE ────────────────────────────────────────────────────────────────
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8080/api";
+const API_BASE = process.env.REACT_APP_API_URL || "http://178.18.250.88:8080/api";
 
 async function apiDelete(endpoint) {
   const r = await fetch(`${API_BASE}${endpoint}`, { method: "DELETE" });
