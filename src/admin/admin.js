@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useApi, usePost } from "../hooks/useApi";
 
 // ─── API BASE ────────────────────────────────────────────────────────────────
-const API_BASE = process.env.REACT_APP_API_URL || "http://178.18.250.88:8080/api";
+const API_BASE = process.env.REACT_APP_API_URL || "https://www.api-dawahir.com/api";
 
 async function apiDelete(endpoint) {
   const r = await fetch(`${API_BASE}${endpoint}`, { method: "DELETE" });
@@ -54,7 +54,7 @@ const FIELDS = {
     { key: "date",        label: "Date",        type: "date",     required: true,  col: 1, default: today() },
     { key: "heure",       label: "Heure",       type: "text",     required: true,  col: 1, placeholder: "09h00" },
     { key: "lieu",        label: "Lieu",        type: "text",     required: true,  col: 1, placeholder: "Grande Mosquée de Dakar" },
-    { key: "category",    label: "Catégorie",   type: "select",   required: false, col: 1, options: ["Gamou","Magal","Ziarra","Conférence","Formation","Séminaire","Collecte","Prière","Jeunesse","Communauté","Atelier"] },
+    { key: "category",    label: "Catégorie",   type: "select",   required: false, col: 1, options: ["Gamou","Ziarra","Conférence","Ismou"] },
     { key: "description", label: "Description", type: "textarea", required: true,  col: 2 },
   ],
   preches: [

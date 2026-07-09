@@ -77,7 +77,7 @@ function useHijriCalendar(year, month) {
     setLoading(true);
     setError(null);
     const mm = String(month + 1).padStart(2, "0");
-    fetch(`http://178.18.250.88:8080/api/hijri-calendar?month=${mm}&year=${year}`, {
+    fetch(`https://www.api-dawahir.com/api/hijri-calendar?month=${mm}&year=${year}`, {
       headers: { accept: "application/json" },
     })
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
