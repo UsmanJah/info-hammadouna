@@ -134,7 +134,7 @@ function Header() {
     setLoading(true);
     setError(null);
     try { 
-      const url = `http://www.api-dawahir.com:8080/api/prayer-times?country=${encodeURIComponent(
+      const url = `https://www.api-dawahir.com/api/prayer-times?country=${encodeURIComponent(
         selectedCountry.country
       )}&city=${encodeURIComponent(city.trim())}&timezone=${encodeURIComponent(selectedTimezone)}`;
       const res = await fetch(url);

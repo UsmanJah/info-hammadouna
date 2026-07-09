@@ -5,9 +5,8 @@
 import { useState, useEffect, useCallback } from "react";
 
 // ✅ CRA (webpack) → process.env.REACT_APP_*  au lieu de import.meta.env
-const API_BASE = process.env.REACT_APP_API_URL ?? "http://www.api-dawahir.com:8080/api";
+const API_BASE = process.env.REACT_APP_API_URL ?? "https://www.api-dawahir.com/api";
 const API_KEY  = process.env.REACT_APP_API_KEY  ?? "";
-
 /** Headers communs à toutes les requêtes */
 function buildHeaders(extra = {}) {
   return {
