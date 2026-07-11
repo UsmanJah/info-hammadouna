@@ -1,26 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useApi, usePost } from "../hooks/useApi";
-
-// ─── API BASE ────────────────────────────────────────────────────────────────
-const API_BASE = process.env.REACT_APP_API_URL || "https://www.api-dawahir.com/api";
-
-async function apiDelete(endpoint) {
-  const r = await fetch(`${API_BASE}${endpoint}`, { method: "DELETE" });
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r;
-}
-async function apiPut(endpoint, body) {
-  const r = await fetch(`${API_BASE}${endpoint}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!r.ok) {
-    const d = await r.json().catch(() => ({}));
-    throw new Error(d?.detail ?? `HTTP ${r.status}`);
-  }
-  return r.json();
-}
+import { useApi, useMutation } from "../hooks/useApi";
 
 // ─── TOKENS ──────────────────────────────────────────────────────────────────
 const T = {
@@ -79,7 +58,7 @@ const FIELDS = {
     { key: "resume",       label: "Résumé",       type: "textarea", required: false, col: 2, rows: 2 },
     { key: "description",  label: "Description",  type: "textarea", required: false, col: 2 },
   ],
-  blog: [ 
+  blog: [
     { key: "titre",    label: "Titre",            type: "text",     required: true,  col: 2 },
     { key: "auteur",   label: "Auteur",           type: "text",     required: true,  col: 1, placeholder: "Sheikh Abdou" },
     { key: "categorie",label: "Catégorie",        type: "select",   required: true,  col: 1, options: ["Extrait de Djawahirou-l-Ma'ani","Extrait de Jawahir Ar Rassi'il","Premier Discours de 1978"] },
@@ -321,60 +300,60 @@ function TableRow({ item, section, onEdit, onDelete, accentColor, delay }) {
 function SectionPanel({ section }) {
   const meta = SECTION_META[section];
   const { data, loading, error } = useApi(meta.endpoint);
-  const { post, loading: posting } = usePost(meta.endpoint);
+  const { create, update, remove, loading: mutating } = useMutation(meta.endpoint);
 
   const [items, setItems]         = useState(null);
   const [view, setView]           = useState("list"); // list | create | edit
   const [editItem, setEditItem]   = useState(null);
   const [confirm, setConfirm]     = useState(null);
   const [toast, setToast]         = useState(null);
-  const [saving, setSaving]       = useState(false);
 
   // Sync data from API
   useEffect(() => { if (data) setItems(data); }, [data]);
 
   const notify = useCallback((ok, msg) => setToast({ ok, msg }), []);
 
-  // CREATE
+  // CREATE — POST
   async function handleCreate(payload) {
     try {
-      const created = await post(payload);
+      const created = await create(payload);
       setItems(prev => [created, ...(prev || [])]);
       notify(true, `"${getLabel(created, section)}" créé ✓`);
       setView("list");
-    } catch (e) { notify(false, e.message); }
+    } catch (e) {
+      notify(false, `Échec de la création : ${e.message}`);
+    }
   }
 
   // EDIT — PUT
+  // On ne met à jour l'état local qu'APRÈS confirmation du serveur.
+  // Aucun fallback silencieux : si le PUT échoue, l'utilisateur le voit
+  // et les données restent cohérentes avec le serveur après un refresh.
   async function handleEdit(payload) {
-    setSaving(true);
     try {
-      const updated = await apiPut(`${meta.endpoint}/${editItem.id}`, payload);
-      setItems(prev => prev.map(x => x.id === updated.id ? updated : x));
-      notify(true, `"${getLabel(updated, section)}" modifié ✓`);
+      const updated = await update(editItem.id, payload);
+      const merged = { ...editItem, ...payload, ...(updated || {}) };
+      setItems(prev => prev.map(x => x.id === editItem.id ? merged : x));
+      notify(true, `"${getLabel(merged, section)}" modifié ✓`);
       setView("list");
       setEditItem(null);
     } catch (e) {
-      // Si PUT non dispo (404), on patch localement pour la démo
-      setItems(prev => prev.map(x => x.id === editItem.id ? { ...editItem, ...payload } : x));
-      notify(true, `"${getLabel(editItem, section)}" modifié (local) ✓`);
-      setView("list");
-      setEditItem(null);
-    } finally { setSaving(false); }
+      notify(false, `Échec de la modification : ${e.message}`);
+    }
   }
 
   // DELETE
+  // Idem : suppression locale uniquement si le DELETE serveur a réussi.
   async function handleDelete(item) {
     try {
-      await apiDelete(`${meta.endpoint}/${item.id}`);
+      await remove(item.id);
       setItems(prev => prev.filter(x => x.id !== item.id));
       notify(true, `"${getLabel(item, section)}" supprimé`);
     } catch (e) {
-      // Si DELETE non dispo, suppression locale
-      setItems(prev => prev.filter(x => x.id !== item.id));
-      notify(true, `"${getLabel(item, section)}" supprimé (local)`);
+      notify(false, `Échec de la suppression : ${e.message}`);
+    } finally {
+      setConfirm(null);
     }
-    setConfirm(null);
   }
 
   return (
@@ -413,12 +392,12 @@ function SectionPanel({ section }) {
         )}
         {view === "create" && (
           <div style={{ background: T.surface, borderRadius: 12, border: `1px solid ${T.border}`, padding: 24 }}>
-            <GenericForm section={section} onSubmit={handleCreate} loading={posting} />
+            <GenericForm section={section} onSubmit={handleCreate} loading={mutating} />
           </div>
         )}
         {view === "edit" && editItem && (
           <div style={{ background: T.surface, borderRadius: 12, border: `1px solid ${T.border}`, padding: 24 }}>
-            <GenericForm section={section} initial={editItem} onSubmit={handleEdit} loading={saving} submitLabel="Enregistrer" />
+            <GenericForm section={section} initial={editItem} onSubmit={handleEdit} loading={mutating} submitLabel="Enregistrer" />
           </div>
         )}
       </div>

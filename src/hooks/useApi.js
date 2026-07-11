@@ -1,19 +1,40 @@
 // src/hooks/useApi.js
-// Hook générique pour interagir avec le backend FastAPI
-// Usage : const { data, loading, error } = useApi("/evenements");
+// Hooks génériques pour interagir avec le backend FastAPI
+// Usage lecture : const { data, loading, error } = useApi("/evenements");
+// Usage écriture : const { create, update, remove, loading, error } = useMutation("/evenements");
 
 import { useState, useEffect, useCallback } from "react";
 
 // ✅ CRA (webpack) → process.env.REACT_APP_*  au lieu de import.meta.env
-const API_BASE = process.env.REACT_APP_API_URL ?? "https://www.api-dawahir.com/api";
-const API_KEY  = process.env.REACT_APP_API_KEY  ?? "";
-/** Headers communs à toutes les requêtes */
-function buildHeaders(extra = {}) {
+export const API_BASE = process.env.REACT_APP_API_URL ?? "https://www.api-dawahir.com/api";
+export const API_KEY  = process.env.REACT_APP_API_KEY  ?? "";
+
+/** Headers communs à TOUTES les requêtes (GET, POST, PUT, DELETE). */
+export function buildHeaders(extra = {}) {
   return {
     "Content-Type": "application/json",
     ...(API_KEY ? { "X-API-Key": API_KEY } : {}),
     ...extra,
   };
+}
+
+/**
+ * Requête générique avec gestion d'erreur cohérente.
+ * Lève une Error avec le message du backend si dispo, sinon `HTTP <status>`.
+ */
+export async function apiRequest(endpoint, { method = "GET", body } = {}) {
+  const r = await fetch(`${API_BASE}${endpoint}`, {
+    method,
+    headers: buildHeaders(),
+    body: body !== undefined ? JSON.stringify(body) : undefined,
+  });
+
+  if (!r.ok) {
+    const detail = await r.json().catch(() => ({}));
+    throw new Error(detail?.detail ?? detail?.message ?? `HTTP ${r.status}`);
+  }
+  if (r.status === 204) return null; // No Content (souvent le cas pour DELETE)
+  return r.json().catch(() => null);
 }
 
 /**
@@ -33,7 +54,6 @@ export function useApi(endpoint, params = {}) {
       if (v !== undefined && v !== null && v !== "") url.searchParams.set(k, v);
     });
     return url.toString();
- 
   }, [endpoint, JSON.stringify(params)]);
 
   useEffect(() => {
@@ -57,39 +77,41 @@ export function useApi(endpoint, params = {}) {
 }
 
 /**
- * Envoie un POST JSON sur `${API_BASE}${endpoint}`.
- * Retourne { post, loading, error, result }.
+ * Hook de mutation générique pour une ressource (create / update / remove).
+ * Toutes les requêtes passent par apiRequest() donc portent les mêmes
+ * headers (auth incluse) que les GET, et lèvent une vraie erreur en cas
+ * d'échec — aucun fallback silencieux "local only".
  *
- * @param {string} endpoint  – ex: "/blog"
+ * @param {string} endpoint – ex: "/evenements"
  */
-export function usePost(endpoint) {
+export function useMutation(endpoint) {
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState(null);
-  const [result, setResult]   = useState(null);
 
-  const post = useCallback(async (body) => {
+  const run = useCallback(async (method, path, body) => {
     setLoading(true);
     setError(null);
     try {
-      const r = await fetch(`${API_BASE}${endpoint}`, {
-        method: "POST",
-        headers: buildHeaders(),
-        body: JSON.stringify(body),
-      });
-      if (!r.ok) {
-        const detail = await r.json().catch(() => ({}));
-        throw new Error(detail?.detail ?? `HTTP ${r.status}`);
-      }
-      const data = await r.json();
-      setResult(data);
-      return data;
+      return await apiRequest(path, { method, body });
     } catch (e) {
       setError(e.message);
-      throw e;
+      throw e; // on laisse l'appelant décider quoi faire (toast, etc.)
     } finally {
       setLoading(false);
     }
-  }, [endpoint]);
+  }, []);
 
-  return { post, loading, error, result };
+  return {
+    create: (body)     => run("POST",   endpoint, body),
+    update: (id, body) => run("PATCH",  `${endpoint}/${id}`, body),
+    remove: (id)        => run("DELETE", `${endpoint}/${id}`),
+    loading,
+    error,
+  };
+}
+
+/** Conservé pour compatibilité ascendante si utilisé ailleurs. */
+export function usePost(endpoint) {
+  const { create, loading, error } = useMutation(endpoint);
+  return { post: create, loading, error };
 }
