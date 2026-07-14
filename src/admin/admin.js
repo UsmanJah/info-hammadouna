@@ -52,7 +52,7 @@ const FIELDS = {
     { key: "date",         label: "Date",         type: "date",     required: false, col: 1, default: today() },
     { key: "duree",        label: "Durée",        type: "text",     required: false, col: 1, placeholder: "12 min" },
     { key: "theme",        label: "Thème",        type: "text",     required: false, col: 1, placeholder: "Patience, Gratitude…" },
-    { key: "categorie",    label: "Catégorie",    type: "select",   required: false, col: 1, options: ["Fiqh","Aqida","Sîra","Dou'â","Rappel","Coran"] },
+    { key: "categorie",    label: "Catégorie",    type: "select",   required: false, col: 1, options: ["Lettre de Baye","Sîra","Dou'â","Rappel","Coran"] },
     { key: "serie",        label: "Série",        type: "text",     required: false, col: 1, placeholder: "Nom de la série…" },
     { key: "youtube_link", label: "Lien YouTube", type: "text",     required: false, col: 1, placeholder: "https://youtu.be/…" },
     { key: "resume",       label: "Résumé",       type: "textarea", required: false, col: 2, rows: 2 },
