@@ -6,8 +6,8 @@ const stats = [
   // { value: "1000+", label: "Membres" },
   { value: "40",   label: "Événements /an" },
   { value: "43",    label: "Sections" },
+  { value: "1",    label: "Objectif" },
 ];
-
 function useFadeIn(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);

@@ -78,9 +78,32 @@ function VideoModal({ preche, onClose }) {
   );
 }
 
+/* ══ Utilitaire : parse une date en {annee, mois, jour} ══ */
+const MOIS_NOMS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+
+function parseDate(str) {
+  if (!str) return null;
+  // Format ISO : YYYY-MM-DD
+  let m = str.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (m) return { annee: m[1], mois: m[2].padStart(2,"0"), jour: m[3].padStart(2,"0") };
+  // Format DD/MM/YYYY ou DD-MM-YYYY
+  m = str.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);
+  if (m) return { annee: m[3], mois: m[2].padStart(2,"0"), jour: m[1].padStart(2,"0") };
+  // Fallback : tentative via Date native
+  const d = new Date(str);
+  if (!isNaN(d.getTime())) {
+    return { annee: String(d.getFullYear()), mois: String(d.getMonth()+1).padStart(2,"0"), jour: String(d.getDate()).padStart(2,"0") };
+  }
+  return null;
+}
+
 /* ══ Vue : Prêches journaliers ══ */
 function VueJournaliers() {
-  const [playing, setPlaying] = useState(null);
+  const [playing, setPlaying]         = useState(null);
+  const [filtreCat, setFiltreCat]     = useState("tous");
+  const [filtreAnnee, setFiltreAnnee] = useState("toutes");
+  const [filtreMois, setFiltreMois]   = useState("tous");
+  const [filtreJour, setFiltreJour]   = useState("tous");
   // ✅ API call pour les prêches journaliers
   const { data: prechesJournaliers, loading, error } = useApi("/preche-jour");
 
@@ -89,19 +112,118 @@ function VueJournaliers() {
   if (loading) return <div style={{ textAlign:"center",padding:40,color:"#7aaa92" }}>Chargement…</div>;
   if (error)   return <div style={{ textAlign:"center",padding:40,color:"#e11d48",fontSize:13 }}>Erreur : {error}</div>;
 
+  const liste = prechesJournaliers ?? [];
+
+  // Pré-calcul des dates parsées {annee, mois, jour} pour chaque prêche
+  const listeAvecDate = liste.map(p => ({ ...p, _d: parseDate(p.date) }));
+
+  // Valeurs uniques disponibles pour les filtres
+  const categories = Array.from(new Set(liste.map(p => p.categorie).filter(Boolean)));
+
+  const annees = Array.from(new Set(listeAvecDate.map(p => p._d?.annee).filter(Boolean))).sort((a, b) => b.localeCompare(a));
+
+  const mois = Array.from(new Set(
+    listeAvecDate
+      .filter(p => filtreAnnee === "toutes" || p._d?.annee === filtreAnnee)
+      .map(p => p._d?.mois)
+      .filter(Boolean)
+  )).sort();
+
+  const jours = Array.from(new Set(
+    listeAvecDate
+      .filter(p =>
+        (filtreAnnee === "toutes" || p._d?.annee === filtreAnnee) &&
+        (filtreMois === "tous"    || p._d?.mois  === filtreMois)
+      )
+      .map(p => p._d?.jour)
+      .filter(Boolean)
+  )).sort();
+
+  // Application des filtres
+  const filtres = listeAvecDate.filter(p => {
+    const okCat   = filtreCat   === "tous"   || p.categorie === filtreCat;
+    const okAnnee = filtreAnnee === "toutes" || p._d?.annee === filtreAnnee;
+    const okMois  = filtreMois  === "tous"   || p._d?.mois  === filtreMois;
+    const okJour  = filtreJour  === "tous"   || p._d?.jour  === filtreJour;
+    return okCat && okAnnee && okMois && okJour;
+  });
+
+  const hasActiveFilters = filtreCat !== "tous" || filtreAnnee !== "toutes" || filtreMois !== "tous" || filtreJour !== "tous";
+
+  function onChangeAnnee(v) { setFiltreAnnee(v); setFiltreMois("tous"); setFiltreJour("tous"); }
+  function onChangeMois(v)  { setFiltreMois(v);  setFiltreJour("tous"); }
+
+  const selectStyle = {
+    appearance:"none",
+    fontSize:12.5,
+    fontWeight:600,
+    color:"#0D2B1F",
+    background:"#fff",
+    border:"1.5px solid rgba(15,119,85,.2)",
+    borderRadius:10,
+    padding:"8px 30px 8px 14px",
+    cursor:"pointer",
+    backgroundImage:`url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F7755' stroke-width='2.5'><polyline points='6 9 12 15 18 9'/></svg>")`,
+    backgroundRepeat:"no-repeat",
+    backgroundPosition:"right 10px center",
+    backgroundSize:14,
+    outline:"none",
+  };
+
   return (
     <div>
-      <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:20 }}>
+      <div style={{ display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:20,flexWrap:"wrap",gap:12 }}>
         <h2 style={{ fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:600,color:"#0D2B1F" }}>Prêches du Jour</h2>
         <span style={{ fontSize:12,fontWeight:700,color:"#0F7755",background:"rgba(15,119,85,.08)",border:"1px solid rgba(15,119,85,.18)",borderRadius:99,padding:"4px 12px" }}>
-          {prechesJournaliers?.length ?? 0} messages
+          {filtres.length} message{filtres.length > 1 ? "s" : ""}
         </span>
       </div>
-      <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
-        {(prechesJournaliers ?? []).map((p, i) => (
-          <JournalierCard key={p.id} p={p} color={p.couleur ?? COLORS[i % COLORS.length]} onPlay={setPlaying}/>
-        ))}
+
+      {/* ══ Barre de filtres ══ */}
+      <div style={{ display:"flex",alignItems:"center",gap:10,flexWrap:"wrap",marginBottom:22,padding:14,background:"#f8fdfb",border:"1px solid rgba(15,119,85,.1)",borderRadius:14 }}>
+        <span style={{ fontSize:11,fontWeight:700,color:"#7aaa92",textTransform:"uppercase",letterSpacing:.5,marginRight:2 }}>Filtrer :</span>
+
+        <select value={filtreCat} onChange={e => setFiltreCat(e.target.value)} style={selectStyle}>
+          <option value="tous">Toutes les catégories</option>
+          {categories.map(c => <option key={c} value={c}>{c}</option>)}
+        </select>
+
+        <select value={filtreAnnee} onChange={e => onChangeAnnee(e.target.value)} style={selectStyle}>
+          <option value="toutes">Année</option>
+          {annees.map(a => <option key={a} value={a}>{a}</option>)}
+        </select>
+
+        <select value={filtreMois} onChange={e => onChangeMois(e.target.value)} style={selectStyle} disabled={annees.length === 0}>
+          <option value="tous">Mois</option>
+          {mois.map(m => <option key={m} value={m}>{MOIS_NOMS[parseInt(m, 10) - 1] ?? m}</option>)}
+        </select>
+
+        <select value={filtreJour} onChange={e => setFiltreJour(e.target.value)} style={selectStyle} disabled={annees.length === 0}>
+          <option value="tous">Jour</option>
+          {jours.map(j => <option key={j} value={j}>{j}</option>)}
+        </select>
+
+        {hasActiveFilters && (
+          <button
+            onClick={() => { setFiltreCat("tous"); setFiltreAnnee("toutes"); setFiltreMois("tous"); setFiltreJour("tous"); }}
+            style={{ fontSize:12,fontWeight:600,color:"#e11d48",background:"rgba(225,29,72,.06)",border:"1px solid rgba(225,29,72,.2)",borderRadius:10,padding:"8px 14px",cursor:"pointer" }}>
+            ✕ Réinitialiser
+          </button>
+        )}
       </div>
+
+      {filtres.length === 0 ? (
+        <div style={{ textAlign:"center",padding:"48px 20px",color:"#7aaa92",fontSize:13.5,background:"#f8fdfb",borderRadius:16,border:"1px dashed rgba(15,119,85,.2)" }}>
+          Aucun prêche ne correspond à ces filtres.
+        </div>
+      ) : (
+        <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
+          {filtres.map((p, i) => (
+            <JournalierCard key={p.id} p={p} color={p.couleur ?? COLORS[i % COLORS.length]} onPlay={setPlaying}/>
+          ))}
+        </div>
+      )}
+
       <VideoModal preche={playing} onClose={() => setPlaying(null)}/>
     </div>
   );
@@ -143,9 +265,9 @@ export default function Preche() {
         <h1 style={{ fontFamily:"'Fraunces',serif",fontSize:"clamp(36px,6vw,64px)",fontWeight:700,color:"#0f172a",letterSpacing:-1,marginBottom:16 }}>Prêches & Enseignements</h1>
         {/* Onglets */}
         <div style={{ display:"inline-flex",gap:4,background:"#f1f5f9",borderRadius:14,padding:4 }}>
-          {[["preches","Prêches"],["journaliers","Du Jour"]].map(([val,label]) => (
+          {[["preches","Ligne directrice"],["journaliers","Prêches Journaliers"]].map(([val,label]) => (
             <button key={val} onClick={() => setVue(val)}
-              style={{ padding:"8px 22px",borderRadius:11,fontSize:13,fontWeight:700,border:"none",cursor:"pointer",transition:"all .18s ease",background: vue===val?"#0F7755":"transparent",color: vue===val?"#fff":"#64748b",boxShadow: vue===val?"0 2px 10px rgba(15,119,85,.3)":"none" }}>
+              style={{ padding:"8px 22px",borderRadius:11,fontSize:13,fontsWeight:700,border:"none",cursor:"pointer",transition:"all .18s ease",background: vue===val?"#0F7755":"transparent",color: vue===val?"#fff":"#64748b",boxShadow: vue===val?"0 2px 10px rgba(15,119,85,.3)":"none" }}>
               {label}
             </button>
           ))}
