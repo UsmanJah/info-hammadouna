@@ -61,7 +61,7 @@ const FIELDS = {
   blog: [
     { key: "titre",    label: "Titre",            type: "text",     required: true,  col: 2 },
     { key: "auteur",   label: "Auteur",           type: "text",     required: true,  col: 1, placeholder: "Sheikh Abdou" },
-    { key: "categorie",label: "Catégorie",        type: "select",   required: true,  col: 1, options: ["Extrait de Djawahirou-l-Ma'ani","Extrait de Jawahir Ar Rassi'il","Premier Discours de 1978"] },
+    { key: "categorie",label: "Catégorie",        type: "select",   required: true,  col: 1, options: ["Extrait de Djawahirou-l-Ma'ani","Extrait de Jawahir Ar Rassi'il","Premier Discours de 1978", "Livre de Mawlana Thierno Amath Ndiaye"] },
     { key: "date",     label: "Date",             type: "date",     required: true,  col: 1, default: today() },
     { key: "lecture",  label: "Temps de lecture", type: "text",     required: true,  col: 1, placeholder: "5 min" },
     { key: "emoji",    label: "Emoji",            type: "text",     required: false, col: 1, placeholder: "🕌" },
