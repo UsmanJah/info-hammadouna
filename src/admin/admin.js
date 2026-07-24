@@ -52,7 +52,7 @@ const FIELDS = {
     { key: "date",         label: "Date",         type: "date",     required: false, col: 1, default: today() },
     { key: "duree",        label: "Durée",        type: "text",     required: false, col: 1, placeholder: "12 min" },
     { key: "theme",        label: "Thème",        type: "text",     required: false, col: 1, placeholder: "Patience, Gratitude…" },
-    { key: "categorie",    label: "Catégorie",    type: "select",   required: false, col: 1, options: ["Lettre de Baye","Sîra","Dou'â","Rappel","Coran"] },
+    { key: "categorie",    label: "Catégorie",    type: "select",   required: false, col: 1, options: ["Lettre de Baye","Jawahir Al Ma'ani"] },
     { key: "serie",        label: "Série",        type: "text",     required: false, col: 1, placeholder: "Nom de la série…" },
     { key: "youtube_link", label: "Lien YouTube", type: "text",     required: false, col: 1, placeholder: "https://youtu.be/…" },
     { key: "resume",       label: "Résumé",       type: "textarea", required: false, col: 2, rows: 2 },
@@ -61,7 +61,7 @@ const FIELDS = {
   blog: [
     { key: "titre",    label: "Titre",            type: "text",     required: true,  col: 2 },
     { key: "auteur",   label: "Auteur",           type: "text",     required: true,  col: 1, placeholder: "Sheikh Abdou" },
-    { key: "categorie",label: "Catégorie",        type: "select",   required: true,  col: 1, options: ["Extrait de Djawahirou-l-Ma'ani","Extrait de Jawahir Ar Rassi'il","Premier Discours de 1978", "Livre de Mawlana Thierno Amath Ndiaye"] },
+    { key: "categorie",label: "Catégorie",        type: "select",   required: true,  col: 1, options: ["Extrait de Djawahirou-l-Ma'ani","Extrait de Jawahir Ar Rassi'il","Premier Discours de 1978","Livre de Mawlana Thierno Amath Ndiaye","Recueil des disciples de la Jamma"] },
     { key: "date",     label: "Date",             type: "date",     required: true,  col: 1, default: today() },
     { key: "lecture",  label: "Temps de lecture", type: "text",     required: true,  col: 1, placeholder: "5 min" },
     { key: "emoji",    label: "Emoji",            type: "text",     required: false, col: 1, placeholder: "🕌" },

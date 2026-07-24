@@ -176,7 +176,7 @@ export default function Blog() {
                       <span className="text-xl">{a.emoji}</span>
                       <span className="text-xs font-bold uppercase tracking-wider" style={{ color: a.couleur ?? "#0F7755" }}>{a.categorie}</span>
                     </div>
-                    <span className="text-xs" style={{ color: "#7aaa92" }}>⏱ {a.lecture}</span>
+                    {/* <span className="text-xs" style={{ color: "#7aaa92" }}>⏱ {a.lecture}</span> */}
                   </div>
                   <div className="px-5 py-4">
                     <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 19, fontWeight: 700, color: "#0D2B1F", lineHeight: 1.25, marginBottom: 8 }}>

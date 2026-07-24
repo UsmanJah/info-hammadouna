@@ -328,12 +328,12 @@ export default function Preche() {
                         style={{ display:"inline-flex",alignItems:"center",gap:6,padding:"10px 20px",background:"#0F7755",color:"#fff",borderRadius:12,border:"none",cursor:"pointer",fontSize:13,fontWeight:600,boxShadow:"0 4px 18px rgba(15,119,85,.32)" }}>
                         <span style={{ fontSize:10 }}>▶</span> Regarder
                       </button>
-                      {current.youtube_link && (
+                      {/* {current.youtube_link && (
                         <a href={current.youtube_link} target="_blank" rel="noopener noreferrer"
                           style={{ display:"inline-flex",alignItems:"center",gap:6,padding:"10px 16px",color:"#0F7755",borderRadius:12,border:"1px solid rgba(15,119,85,.3)",fontSize:13,fontWeight:600,textDecoration:"none" }}>
                           ↗ YouTube
                         </a>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>

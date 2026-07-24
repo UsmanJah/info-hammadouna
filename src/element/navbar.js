@@ -6,7 +6,7 @@ const navItems = [
   { label: "A PROPOS",   id: "apropos"    },
   { label: "EVENEMENT",  id: "event"      },
   { label: "PRECHE",     id: "preche"     },
-  { label: "BLOG",       id: "blog"       },
+  { label: "BIBLIOTHEQUE",       id: "blog"       },
   { label: "CALENDRIER", id: "calendrier" },
   { label: "CONTACT",    id: "footer"     },
 ];
