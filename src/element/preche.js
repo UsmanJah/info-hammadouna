@@ -233,7 +233,8 @@ function VueJournaliers() {
 export default function Preche() {
   const [vue, setVue]           = useState("preches");
   const [selected, setSelected] = useState(null);
-  const [playing, setPlaying]   = useState(false);
+  // ✅ popup vidéo pour la section "Ligne directrice"
+  const [modalPreche, setModalPreche] = useState(null);
 
   // ✅ API call – remplace les imports JSON statiques
   const { data: preches, loading, error } = useApi("/preches");
@@ -242,7 +243,8 @@ export default function Preche() {
   const current = selected ?? (preches?.[0] ?? null);
   const initial = current?.predicateur?.[0] ?? "?";
 
-  function pick(p) { setSelected(p); setPlaying(false); }
+  // ✅ Sélectionne le prêche ET ouvre le popup de lecture
+  function pick(p) { setSelected(p); setModalPreche(p); }
 
   return (
     <div style={{ minHeight:"100vh",background:"#ffffff",fontFamily:"'Plus Jakarta Sans',sans-serif" }}>
@@ -287,22 +289,12 @@ export default function Preche() {
                 {/* Lecteur principal */}
                 <div style={{ display:"flex",flexWrap:"wrap",borderRadius:24,overflow:"hidden",background:"#fff",boxShadow:"0 8px 40px rgba(15,119,85,.12)",border:"1px solid #D4F0E2",marginBottom:28 }}>
                   <div style={{ flex:"1 1 300px",position:"relative",paddingTop:"min(56.25%, 260px)",background:"#0a2010" }}>
-                    {!playing ? (
-                      <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"linear-gradient(140deg,#0F7755 0%,#072e20 100%)",cursor:"pointer" }}
-                        onClick={() => setPlaying(true)}>
-                        <div style={{ width:68,height:68,background:"#46D67A",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 0 0 10px rgba(70,214,122,.18),0 10px 36px rgba(15,119,85,.5)" }}>
-                          <span style={{ display:"block",width:0,height:0,borderTop:"12px solid transparent",borderBottom:"12px solid transparent",borderLeft:"20px solid #0F7755",marginLeft:5 }}/>
-                        </div>
+                    <div style={{ position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"linear-gradient(140deg,#0F7755 0%,#072e20 100%)",cursor:"pointer" }}
+                      onClick={() => setModalPreche(current)}>
+                      <div style={{ width:68,height:68,background:"#46D67A",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 0 0 10px rgba(70,214,122,.18),0 10px 36px rgba(15,119,85,.5)" }}>
+                        <span style={{ display:"block",width:0,height:0,borderTop:"12px solid transparent",borderBottom:"12px solid transparent",borderLeft:"20px solid #0F7755",marginLeft:5 }}/>
                       </div>
-                    ) : (
-                      <iframe
-                        src={`${current.youtube_link}?autoplay=1`}
-                        title={current.titre}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{ position:"absolute",inset:0,width:"100%",height:"100%",border:0 }}
-                      />
-                    )}
+                    </div>
                   </div>
 
                   <div style={{ flex:"1 1 240px",padding:28,display:"flex",flexDirection:"column" }}>
@@ -324,7 +316,7 @@ export default function Preche() {
                     {current.resume && <p style={{ fontSize:13,color:"#2E6B52",lineHeight:1.6,marginBottom:8,flex:1 }}>{current.resume}</p>}
                     {current.description && <p style={{ fontSize:12,color:"#7aaa92",lineHeight:1.5,marginBottom:20 }}>{current.description}</p>}
                     <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
-                      <button onClick={() => setPlaying(true)}
+                      <button onClick={() => setModalPreche(current)}
                         style={{ display:"inline-flex",alignItems:"center",gap:6,padding:"10px 20px",background:"#0F7755",color:"#fff",borderRadius:12,border:"none",cursor:"pointer",fontSize:13,fontWeight:600,boxShadow:"0 4px 18px rgba(15,119,85,.32)" }}>
                         <span style={{ fontSize:10 }}>▶</span> Regarder
                       </button>
@@ -370,6 +362,9 @@ export default function Preche() {
                     );
                   })}
                 </div>
+
+                {/* ✅ Popup de lecture vidéo */}
+                <VideoModal preche={modalPreche} onClose={() => setModalPreche(null)} />
               </>
             )}
           </>
