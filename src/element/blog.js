@@ -80,16 +80,19 @@ function ArticleModal({ article, onClose }) {
             {article.resume}
           </p>
           <div style={{ borderTop: "1px solid #D4F0E2", paddingTop: 20 }}>
-            {article.contenu.split("\n\n").map((bloc, i) => {
-              if (bloc.startsWith("**") && bloc.endsWith("**")) {
-                return (
-                  <h3 key={i} style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18, fontWeight: 700, color: "#0F7755", marginBottom: 10, marginTop: i > 0 ? 20 : 0 }}>
-                    {bloc.replace(/\*\*/g, "")}
-                  </h3>
-                );
-              }
-              return <p key={i} className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>{bloc}</p>;
-            })}
+            {/*
+              Le champ "contenu" est désormais produit par l'éditeur de texte
+              enrichi de l'admin (gras, souligné, alignement, listes, titres,
+              citations…) et stocké sous forme de HTML. On l'injecte donc
+              directement, stylé via la classe "rich-content" définie plus bas,
+              au lieu de le parser manuellement (ancien découpage sur "\n\n"
+              et "**...**").
+            */}
+            <div
+              className="rich-content text-sm"
+              style={{ color: "#374151", lineHeight: 1.75 }}
+              dangerouslySetInnerHTML={{ __html: article.contenu }}
+            />
           </div>
         </div>
       </div>
@@ -118,6 +121,37 @@ export default function Blog() {
         .article-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(15,119,85,.16) !important; }
         .article-card:hover .card-arrow { transform: translateX(4px); opacity:1; }
         .card-arrow { transition: transform .2s ease, opacity .2s ease; opacity: .5; }
+
+        /* ── Styles pour le contenu enrichi (HTML) des articles ── */
+        .rich-content p { margin: 0 0 16px 0; }
+        .rich-content p:last-child { margin-bottom: 0; }
+        .rich-content h1, .rich-content h2, .rich-content h3 {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 700;
+          color: #0F7755;
+          line-height: 1.25;
+          margin: 24px 0 10px 0;
+        }
+        .rich-content h1:first-child, .rich-content h2:first-child, .rich-content h3:first-child { margin-top: 0; }
+        .rich-content h1 { font-size: 22px; }
+        .rich-content h2 { font-size: 20px; }
+        .rich-content h3 { font-size: 18px; }
+        .rich-content strong, .rich-content b { font-weight: 700; color: #0D2B1F; }
+        .rich-content em, .rich-content i { font-style: italic; }
+        .rich-content u { text-decoration: underline; }
+        .rich-content s, .rich-content strike { text-decoration: line-through; }
+        .rich-content blockquote {
+          margin: 16px 0;
+          padding: 10px 18px;
+          border-left: 3px solid #0F7755;
+          background: rgba(15,119,85,.06);
+          color: #2E6B52;
+          font-style: italic;
+          border-radius: 0 8px 8px 0;
+        }
+        .rich-content ul, .rich-content ol { margin: 0 0 16px 0; padding-left: 22px; }
+        .rich-content li { margin-bottom: 6px; }
+        .rich-content a { color: #0F7755; text-decoration: underline; }
       `}</style>
 
       {/* HEADER */}

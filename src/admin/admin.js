@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useApi, useMutation } from "../hooks/useApi";
 
 // ─── TOKENS ──────────────────────────────────────────────────────────────────
@@ -66,7 +66,7 @@ const FIELDS = {
     { key: "lecture",  label: "Temps de lecture", type: "text",     required: true,  col: 1, placeholder: "5 min" },
     { key: "emoji",    label: "Emoji",            type: "text",     required: false, col: 1, placeholder: "🕌" },
     { key: "resume",   label: "Résumé",           type: "textarea", required: false, col: 2, rows: 2 },
-    { key: "contenu",  label: "Contenu",          type: "textarea", required: true,  col: 2, rows: 8 },
+    { key: "contenu",  label: "Contenu",          type: "richtext", required: true,  col: 2, rows: 8, placeholder: "Rédigez le contenu de l'article…" },
   ],
 };
 
@@ -110,6 +110,110 @@ function FSelect({ value, onChange, options, required }) {
   );
 }
 
+// ─── RICH TEXT EDITOR (utilisé pour le champ "Contenu" du Blog) ─────────────
+function RTButton({ onClick, children, title }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <button
+      type="button"
+      title={title}
+      onMouseDown={e => e.preventDefault()} // évite de perdre la sélection au clic
+      onClick={onClick}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        display: "flex", alignItems: "center", justifyContent: "center",
+        minWidth: 28, height: 28, padding: "0 6px", borderRadius: 6, border: "none", cursor: "pointer",
+        background: hov ? T.surface : "transparent",
+        color: T.text, fontSize: 12, fontWeight: 600,
+        fontFamily: "'Sora', sans-serif", transition: "all .12s",
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
+function RTDivider() {
+  return <div style={{ width: 1, height: 18, background: T.border, margin: "0 4px", flexShrink: 0 }} />;
+}
+
+function RichTextEditor({ value, onChange, placeholder, required }) {
+  const ref = useRef(null);
+  const initialized = useRef(false);
+  const [focused, setFocused] = useState(false);
+
+  // On initialise le contenu une seule fois pour éviter de perdre le curseur
+  // à chaque frappe (contentEditable non contrôlé après montage).
+  useEffect(() => {
+    if (ref.current && !initialized.current) {
+      ref.current.innerHTML = value || "";
+      initialized.current = true;
+    }
+  }, [value]);
+
+  function emitChange() {
+    if (ref.current) onChange({ target: { value: ref.current.innerHTML } });
+  }
+
+  function exec(command, arg) {
+    if (ref.current) ref.current.focus();
+    document.execCommand(command, false, arg);
+    emitChange();
+  }
+
+  const isEmpty = !value || value === "<br>" || value === "<p></p>";
+
+  return (
+    <div style={{ border: `1.5px solid ${focused ? T.accent : T.border}`, borderRadius: 8, background: focused ? "#FDFCFA" : T.bg, transition: "all .15s" }}>
+      {/* Barre d'outils */}
+      <div style={{ display: "flex", alignItems: "center", gap: 2, padding: "6px 8px", borderBottom: `1px solid ${T.border}`, flexWrap: "wrap" }}>
+        <RTButton title="Gras" onClick={() => exec("bold")}><b>G</b></RTButton>
+        <RTButton title="Italique" onClick={() => exec("italic")}><i>I</i></RTButton>
+        <RTButton title="Souligné" onClick={() => exec("underline")}><u>S</u></RTButton>
+        <RTButton title="Barré" onClick={() => exec("strikeThrough")}><s>B</s></RTButton>
+        <RTDivider />
+        <RTButton title="Aligner à gauche" onClick={() => exec("justifyLeft")}>⯇</RTButton>
+        <RTButton title="Centrer" onClick={() => exec("justifyCenter")}>≡</RTButton>
+        <RTButton title="Aligner à droite" onClick={() => exec("justifyRight")}>⯈</RTButton>
+        <RTButton title="Justifier" onClick={() => exec("justifyFull")}>☰</RTButton>
+        <RTDivider />
+        <RTButton title="Titre" onClick={() => exec("formatBlock", "<h3>")}>H</RTButton>
+        <RTButton title="Citation" onClick={() => exec("formatBlock", "<blockquote>")}>"</RTButton>
+        <RTButton title="Liste à puces" onClick={() => exec("insertUnorderedList")}>•</RTButton>
+        <RTButton title="Liste numérotée" onClick={() => exec("insertOrderedList")}>1.</RTButton>
+        <RTDivider />
+        <RTButton title="Annuler" onClick={() => exec("undo")}>↶</RTButton>
+        <RTButton title="Rétablir" onClick={() => exec("redo")}>↷</RTButton>
+        <RTButton title="Effacer la mise en forme" onClick={() => exec("removeFormat")}>⌫</RTButton>
+      </div>
+
+      {/* Zone d'édition */}
+      <div style={{ position: "relative" }}>
+        {isEmpty && placeholder && (
+          <span style={{ position: "absolute", top: 10, left: 12, color: "#B8B0A6", fontSize: 13, fontFamily: "'Geist Mono', 'DM Mono', monospace", pointerEvents: "none" }}>
+            {placeholder}
+          </span>
+        )}
+        <div
+          ref={ref}
+          contentEditable
+          suppressContentEditableWarning
+          data-required={required || undefined}
+          onInput={emitChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          style={{
+            minHeight: 200, maxHeight: 460, overflowY: "auto",
+            padding: "10px 12px", fontSize: 13, color: T.text,
+            fontFamily: "'Geist Mono', 'DM Mono', monospace", lineHeight: 1.6, outline: "none",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
 function FieldLabel({ label, required }) {
   return (
     <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: .8, textTransform: "uppercase", color: T.muted, marginBottom: 5 }}>
@@ -120,6 +224,7 @@ function FieldLabel({ label, required }) {
 
 function renderField(fieldDef, value, onChange) {
   const props = { value: value ?? "", onChange, placeholder: fieldDef.placeholder, required: fieldDef.required };
+  if (fieldDef.type === "richtext") return <RichTextEditor {...props} />;
   if (fieldDef.type === "textarea") return <FTextarea {...props} rows={fieldDef.rows || 4} />;
   if (fieldDef.type === "select")   return <FSelect   {...props} options={fieldDef.options} />;
   return <FInput {...props} type={fieldDef.type} />;
