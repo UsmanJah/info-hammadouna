@@ -161,9 +161,6 @@ function Apropos() {
 
             {/* Titre */}
             <div>
-              <h2 className="text-gray-900 font-black text-4xl sm:text-5xl leading-tight">
-                A Propos de
-              </h2>
               <h3 className="text-green-600 font-black text-2xl sm:text-3xl mt-1 leading-tight">
                 Jamhiyatou Hammâdoûna
               </h3>
