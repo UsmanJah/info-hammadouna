@@ -178,7 +178,7 @@ function Apropos() {
               La <strong className="text-gray-800 font-bold">Jamhiyatou Hammâdoûna</strong> est un cercle de disciples de la Faydatou Tidjaniyya dont la mission consiste à se préoccuper d’Allah, à persister dans Son souvenir et à prier sur l’Élu, le Prophète Muhammad (PSL).".
             </p>
             <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-              À travers leurs activités, conférences et événements, Ils œuvrent pour le renforcement de l'unité, la diffusion du savoir islamique.
+              À travers leurs activités, conférences et événements, ils œuvrent pour le renforcement de l'unité, la diffusion du savoir islamique.
             </p>
 
             {/* Citation */}
