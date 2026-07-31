@@ -364,7 +364,7 @@ export default function Event() {
           <div style={{ textAlign:"center", marginTop:28, animation:"fadeUp 0.5s ease 0.4s both" }}>
             <button onClick={() => setShowPanel(true)} style={{ background:"none", border:"none", color:BRAND.greenMid, fontSize:13, fontWeight:600, cursor:"pointer", display:"inline-flex", alignItems:"center", gap:6, opacity:0.8, fontFamily:"'Outfit',sans-serif" }}
               onMouseEnter={e => e.currentTarget.style.opacity="1"} onMouseLeave={e => e.currentTarget.style.opacity="0.8"}>
-              Voir les tous évènements <IcoArrow c={BRAND.greenMid}/>
+              Voir tous les évènements <IcoArrow c={BRAND.greenMid}/>
             </button>
           </div>
         )}
