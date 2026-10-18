@@ -1,8 +1,5 @@
-// src/pages/Blog.jsx  –  migré vers l'API FastAPI
-// Remplace : import blogData from "../data/blog.json";
-// Par       : useApi("/blog")
-
-import { useState } from "react";
+// src/element/blog.js
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { useApi } from "../hooks/useApi";
 
 /* ── Islamic geometry SVG components ── */
@@ -19,6 +16,7 @@ function IslamicStar({ size = 60, color = "#22c55e", opacity = 0.18 }) {
     </svg>
   );
 }
+
 function Star12({ size = 80, color = "#22c55e", opacity = 0.13 }) {
   const s = size / 2;
   const pts = Array.from({ length: 24 }, (_, i) => {
@@ -33,6 +31,187 @@ function Star12({ size = 80, color = "#22c55e", opacity = 0.13 }) {
   );
 }
 
+/* ── Pagination du contenu en "pages de livre" ── */
+const PAGE_CHARS = 700; // Nombre de caractères approximatif par page : à ajuster
+
+function paginateHtml(html) {
+  if (!html) return [];
+  const doc = new DOMParser().parseFromString(html, "text/html");
+
+  const blocks = [];
+  doc.body.childNodes.forEach((node) => {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      blocks.push({ markup: node.outerHTML, text: node.textContent });
+    } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+      node.textContent
+        .split(/\n\s*\n/)
+        .filter((t) => t.trim())
+        .forEach((t) => {
+          const p = doc.createElement("p");
+          p.textContent = t.trim();
+          blocks.push({ markup: p.outerHTML, text: t });
+        });
+    }
+  });
+
+  const pages = [];
+  let current = "";
+  let size = 0;
+  for (const b of blocks) {
+    const len = b.text.length;
+    if (size > 0 && size + len > PAGE_CHARS) {
+      pages.push(current);
+      current = "";
+      size = 0;
+    }
+    current += b.markup;
+    size += len;
+  }
+  if (current) pages.push(current);
+  return pages;
+}
+
+const navBtnStyle = (disabled) => ({
+  padding: "8px 14px",
+  borderRadius: 12,
+  fontSize: 13,
+  fontWeight: 600,
+  whiteSpace: "nowrap",
+  color: disabled ? "#b7cfc2" : "#0F7755",
+  background: disabled ? "transparent" : "rgba(15,119,85,.08)",
+  border: "1px solid rgba(15,119,85,.18)",
+  cursor: disabled ? "default" : "pointer",
+});
+
+/* ── Lecteur type livre ── */
+function BookReader({ article }) {
+  const pages = useMemo(() => paginateHtml(article.contenu), [article.contenu]);
+  const total = pages.length;
+  const [index, setIndex] = useState(0);
+  const [dir, setDir] = useState(1);
+  const touchX = useRef(null);
+
+  const go = useCallback(
+    (delta) => {
+      const next = index + delta;
+      if (next < 0 || next >= total) return;
+      setDir(delta);
+      setIndex(next);
+    },
+    [index, total]
+  );
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowRight") go(1);
+      if (e.key === "ArrowLeft") go(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [go]);
+
+  if (total === 0) {
+    return (
+      <p className="text-sm" style={{ color: "#374151", lineHeight: 1.75 }}>
+        {article.resume}
+      </p>
+    );
+  }
+
+  const isLast = index === total - 1;
+
+  return (
+    <div
+      className="flex flex-col"
+      style={{ flex: 1, minHeight: 0 }}
+      onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+      onTouchEnd={(e) => {
+        if (touchX.current == null) return;
+        const dx = e.changedTouches[0].clientX - touchX.current;
+        if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+        touchX.current = null;
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          background: "#fffdf8",
+          borderRadius: 6,
+          overflow: "hidden",
+          boxShadow:
+            "0 1px 0 #e8e2d4, 0 2px 0 #f3eee2, 0 3px 0 #ebe5d6, 0 14px 34px rgba(7,64,44,.16)",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: 16,
+            pointerEvents: "none",
+            background: "linear-gradient(90deg, #cfe5d9 0%, #fffdf8 100%)",
+            opacity: 0.85,
+          }}
+        />
+
+        <div
+          key={index}
+          className={dir > 0 ? "book-turn-next" : "book-turn-prev"}
+          style={{
+            height: "min(50vh, 460px)",
+            minHeight: 260,
+            overflowY: "auto",
+            padding: "28px 30px 24px 38px",
+          }}
+        >
+          <div
+            className="rich-content text-sm"
+            style={{ color: "#374151", lineHeight: 1.85 }}
+            dangerouslySetInnerHTML={{ __html: pages[index] }}
+          />
+        </div>
+
+        <div
+          className="flex items-center justify-between"
+          style={{
+            padding: "10px 20px",
+            borderTop: "1px dashed #D4F0E2",
+            fontSize: 12,
+            color: "#7aaa92",
+          }}
+        >
+          <span>{article.titre}</span>
+          <span style={{ fontWeight: 600 }}>
+            {index + 1} / {total}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4 mt-5">
+        <button onClick={() => go(-1)} disabled={index === 0} style={navBtnStyle(index === 0)}>
+          ← Précédente
+        </button>
+
+        <div style={{ flex: 1, height: 4, background: "#D4F0E2", borderRadius: 99, overflow: "hidden" }}>
+          <div
+            style={{
+              height: "100%",
+              width: `${((index + 1) / total) * 100}%`,
+              background: "linear-gradient(90deg, #46D67A, #0F7755)",
+              transition: "width .35s ease",
+            }}
+          />
+        </div>
+
+        <button onClick={() => go(1)} disabled={isLast} style={navBtnStyle(isLast)}>
+          {isLast ? "Fin ✦" : "Suivante →"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /* ── Article Popup ── */
 function ArticleModal({ article, onClose }) {
   if (!article) return null;
@@ -43,9 +222,9 @@ function ArticleModal({ article, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl rounded-3xl overflow-hidden"
-        style={{ background: "#fff", boxShadow: "0 24px 80px rgba(15,119,85,.22)", maxHeight: "85vh", animation: "popUp .3s cubic-bezier(.22,1,.36,1) both" }}
-        onClick={e => e.stopPropagation()}
+        className="relative w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col"
+        style={{ background: "#fff", boxShadow: "0 24px 80px rgba(15,119,85,.22)", maxHeight: "90vh", animation: "popUp .3s cubic-bezier(.22,1,.36,1) both" }}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="relative px-8 pt-8 pb-6" style={{ background: "linear-gradient(135deg, #0F7755 0%, #07402c 100%)" }}>
           <div style={{ position: "absolute", right: 20, top: -10, opacity: 0.15 }}>
@@ -75,24 +254,12 @@ function ArticleModal({ article, onClose }) {
           </div>
         </div>
 
-        <div className="px-8 py-6 overflow-y-auto" style={{ maxHeight: "calc(85vh - 180px)" }}>
+        <div className="px-8 py-6 flex flex-col" style={{ flex: 1, minHeight: 0, overflow: "hidden" }}>
           <p className="text-sm leading-relaxed mb-6 font-medium" style={{ color: "#2E6B52" }}>
             {article.resume}
           </p>
-          <div style={{ borderTop: "1px solid #D4F0E2", paddingTop: 20 }}>
-            {/*
-              Le champ "contenu" est désormais produit par l'éditeur de texte
-              enrichi de l'admin (gras, souligné, alignement, listes, titres,
-              citations…) et stocké sous forme de HTML. On l'injecte donc
-              directement, stylé via la classe "rich-content" définie plus bas,
-              au lieu de le parser manuellement (ancien découpage sur "\n\n"
-              et "**...**").
-            */}
-            <div
-              className="rich-content text-sm"
-              style={{ color: "#374151", lineHeight: 1.75 }}
-              dangerouslySetInnerHTML={{ __html: article.contenu }}
-            />
+          <div className="flex flex-col" style={{ flex: 1, minHeight: 0 }}>
+            <BookReader key={article.id} article={article} />
           </div>
         </div>
       </div>
@@ -100,11 +267,9 @@ function ArticleModal({ article, onClose }) {
   );
 }
 
-/* ── Main Component ── */
+/* ── Composant principal ── */
 export default function Blog() {
   const [openArticle, setOpenArticle] = useState(null);
-
-  // ✅ API call – remplace l'import JSON statique
   const { data: articles, loading, error } = useApi("/blog");
 
   return (
@@ -115,6 +280,16 @@ export default function Blog() {
         @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
         @keyframes popUp   { from{opacity:0;transform:scale(.94) translateY(16px)} to{opacity:1;transform:scale(1) translateY(0)} }
         @keyframes slideIn { from{opacity:0;transform:translateX(-10px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes turnNext {
+          from { opacity: 0; transform: perspective(1200px) rotateY(-14deg) translateX(24px); transform-origin: left center; }
+          to   { opacity: 1; transform: none; }
+        }
+        @keyframes turnPrev {
+          from { opacity: 0; transform: perspective(1200px) rotateY(14deg) translateX(-24px); transform-origin: right center; }
+          to   { opacity: 1; transform: none; }
+        }
+        .book-turn-next { animation: turnNext .45s cubic-bezier(.22,1,.36,1) both; }
+        .book-turn-prev { animation: turnPrev .45s cubic-bezier(.22,1,.36,1) both; }
         .anim-fade-up  { animation: fadeUp  .55s cubic-bezier(.22,1,.36,1) both; }
         .anim-slide-in { animation: slideIn .4s  cubic-bezier(.22,1,.36,1) both; }
         .article-card { transition: all .22s cubic-bezier(.22,1,.36,1); cursor: pointer; }
@@ -122,7 +297,6 @@ export default function Blog() {
         .article-card:hover .card-arrow { transform: translateX(4px); opacity:1; }
         .card-arrow { transition: transform .2s ease, opacity .2s ease; opacity: .5; }
 
-        /* ── Styles pour le contenu enrichi (HTML) des articles ── */
         .rich-content p { margin: 0 0 16px 0; }
         .rich-content p:last-child { margin-bottom: 0; }
         .rich-content h1, .rich-content h2, .rich-content h3 {
@@ -170,8 +344,6 @@ export default function Blog() {
 
       {/* CONTENU */}
       <main className="max-w-5xl mx-auto px-5 pb-8">
-
-        {/* États de chargement / erreur */}
         {loading && (
           <div style={{ textAlign: "center", padding: 60, color: "#7aaa92", fontSize: 15 }}>
             Chargement des articles…
@@ -183,7 +355,6 @@ export default function Blog() {
           </div>
         )}
 
-        {/* Grille */}
         {articles && (
           <>
             <div className="flex items-center justify-between mb-6">
@@ -210,7 +381,6 @@ export default function Blog() {
                       <span className="text-xl">{a.emoji}</span>
                       <span className="text-xs font-bold uppercase tracking-wider" style={{ color: a.couleur ?? "#0F7755" }}>{a.categorie}</span>
                     </div>
-                    {/* <span className="text-xs" style={{ color: "#7aaa92" }}>⏱ {a.lecture}</span> */}
                   </div>
                   <div className="px-5 py-4">
                     <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 19, fontWeight: 700, color: "#0D2B1F", lineHeight: 1.25, marginBottom: 8 }}>
