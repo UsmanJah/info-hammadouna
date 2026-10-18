@@ -83,10 +83,87 @@ const navBtnStyle = (disabled) => ({
   cursor: disabled ? "default" : "pointer",
 });
 
-/* ── Lecteur type livre ── */
+/* ── Page de garde ── */
+function CoverPage({ article }) {
+  return (
+    <div
+      style={{
+        minHeight: "100%",
+        background: "linear-gradient(160deg, #0F7755 0%, #07402c 100%)",
+        color: "#fff",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        padding: "48px 40px",
+        position: "relative",
+        overflow: "hidden",
+        boxSizing: "border-box",
+      }}
+    >
+      <div style={{ position: "absolute", right: -60, top: -60, opacity: 0.12 }}>
+        <Star12 size={280} color="#46D67A" opacity={1} />
+      </div>
+      <div style={{ position: "absolute", left: -50, bottom: -50, opacity: 0.1 }}>
+        <IslamicStar size={220} color="#46D67A" opacity={1} />
+      </div>
+
+      <span style={{ fontSize: 44, marginBottom: 18, position: "relative" }}>{article.emoji}</span>
+
+      <span
+        className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+        style={{
+          background: "rgba(70,214,122,.18)",
+          color: "#46D67A",
+          border: "1px solid rgba(70,214,122,.3)",
+          position: "relative",
+        }}
+      >
+        {article.categorie}
+      </span>
+
+      <h2
+        style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: "clamp(28px, 5vw, 42px)",
+          fontWeight: 700,
+          lineHeight: 1.15,
+          margin: "22px 0 14px",
+          maxWidth: 520,
+          position: "relative",
+        }}
+      >
+        {article.titre}
+      </h2>
+
+      <div style={{ width: 60, height: 2, background: "#46D67A", margin: "6px 0 18px", position: "relative" }} />
+
+      <p
+        style={{
+          fontSize: 14,
+          lineHeight: 1.75,
+          color: "rgba(255,255,255,.85)",
+          maxWidth: 480,
+          marginBottom: 26,
+          position: "relative",
+        }}
+      >
+        {article.resume}
+      </p>
+
+      <p style={{ fontSize: 12, color: "rgba(255,255,255,.6)", position: "relative" }}>
+        {article.auteur} · {article.date} · {article.lecture} de lecture
+      </p>
+    </div>
+  );
+}
+
+/* ── Lecteur type livre : occupe tout l'espace disponible ── */
 function BookReader({ article }) {
-  const pages = useMemo(() => paginateHtml(article.contenu), [article.contenu]);
-  const total = pages.length;
+  const contentPages = useMemo(() => paginateHtml(article.contenu), [article.contenu]);
+  // Page 0 = page de garde, pages suivantes = contenu
+  const total = contentPages.length + 1;
   const [index, setIndex] = useState(0);
   const [dir, setDir] = useState(1);
   const touchX = useRef(null);
@@ -110,14 +187,6 @@ function BookReader({ article }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [go]);
 
-  if (total === 0) {
-    return (
-      <p className="text-sm" style={{ color: "#374151", lineHeight: 1.75 }}>
-        {article.resume}
-      </p>
-    );
-  }
-
   const isLast = index === total - 1;
 
   return (
@@ -135,11 +204,14 @@ function BookReader({ article }) {
       <div
         style={{
           position: "relative",
+          flex: 1,
+          minHeight: 0,
           background: "#fffdf8",
-          borderRadius: 6,
+          borderRadius: 14,
           overflow: "hidden",
-          boxShadow:
-            "0 1px 0 #e8e2d4, 0 2px 0 #f3eee2, 0 3px 0 #ebe5d6, 0 14px 34px rgba(7,64,44,.16)",
+          display: "flex",
+          flexDirection: "column",
+          boxShadow: "inset 0 0 0 1px #ebe5d6",
         }}
       >
         <div
@@ -148,47 +220,49 @@ function BookReader({ article }) {
             left: 0,
             top: 0,
             bottom: 0,
-            width: 16,
+            width: 14,
+            zIndex: 2,
             pointerEvents: "none",
-            background: "linear-gradient(90deg, #cfe5d9 0%, #fffdf8 100%)",
-            opacity: 0.85,
+            background: "linear-gradient(90deg, #cfe5d9 0%, rgba(255,253,248,0) 100%)",
           }}
         />
 
         <div
           key={index}
           className={dir > 0 ? "book-turn-next" : "book-turn-prev"}
-          style={{
-            height: "min(50vh, 460px)",
-            minHeight: 260,
-            overflowY: "auto",
-            padding: "28px 30px 24px 38px",
-          }}
+          style={{ flex: 1, minHeight: 0, height: "100%", overflowY: "auto" }}
         >
-          <div
-            className="rich-content text-sm"
-            style={{ color: "#374151", lineHeight: 1.85 }}
-            dangerouslySetInnerHTML={{ __html: pages[index] }}
-          />
+          {index === 0 ? (
+            <CoverPage article={article} />
+          ) : (
+            <div style={{ minHeight: "100%", boxSizing: "border-box", padding: "40px 44px 32px 50px" }}>
+              <div
+                className="rich-content"
+                style={{ color: "#374151", lineHeight: 1.85, fontSize: 15 }}
+                dangerouslySetInnerHTML={{ __html: contentPages[index - 1] }}
+              />
+            </div>
+          )}
         </div>
 
-        <div
-          className="flex items-center justify-between"
-          style={{
-            padding: "10px 20px",
-            borderTop: "1px dashed #D4F0E2",
-            fontSize: 12,
-            color: "#7aaa92",
-          }}
-        >
-          <span>{article.titre}</span>
-          <span style={{ fontWeight: 600 }}>
-            {index + 1} / {total}
-          </span>
-        </div>
+        {index > 0 && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: 10,
+              right: 18,
+              fontSize: 12,
+              fontWeight: 600,
+              color: "#7aaa92",
+              pointerEvents: "none",
+            }}
+          >
+            {index} / {total - 1}
+          </div>
+        )}
       </div>
 
-      <div className="flex items-center gap-4 mt-5">
+      <div className="flex items-center gap-4 mt-4" style={{ flexShrink: 0 }}>
         <button onClick={() => go(-1)} disabled={index === 0} style={navBtnStyle(index === 0)}>
           ← Précédente
         </button>
@@ -212,56 +286,57 @@ function BookReader({ article }) {
   );
 }
 
-/* ── Article Popup ── */
+/* ── Popup livre plein écran ── */
 function ArticleModal({ article, onClose }) {
+  useEffect(() => {
+    if (!article) return;
+    const onEsc = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onEsc);
+    return () => window.removeEventListener("keydown", onEsc);
+  }, [article, onClose]);
+
   if (!article) return null;
+
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
       style={{ background: "rgba(15,23,15,0.65)", backdropFilter: "blur(6px)", animation: "fadeIn .2s ease both" }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col"
-        style={{ background: "#fff", boxShadow: "0 24px 80px rgba(15,119,85,.22)", maxHeight: "90vh", animation: "popUp .3s cubic-bezier(.22,1,.36,1) both" }}
+        className="relative w-full flex flex-col"
+        style={{
+          maxWidth: 760,
+          height: "min(92vh, 820px)",
+          background: "#fff",
+          borderRadius: 24,
+          boxShadow: "0 24px 80px rgba(15,119,85,.22)",
+          padding: 16,
+          boxSizing: "border-box",
+          animation: "popUp .3s cubic-bezier(.22,1,.36,1) both",
+        }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative px-8 pt-8 pb-6" style={{ background: "linear-gradient(135deg, #0F7755 0%, #07402c 100%)" }}>
-          <div style={{ position: "absolute", right: 20, top: -10, opacity: 0.15 }}>
-            <Star12 size={100} color="#46D67A" opacity={1} />
-          </div>
-          <div className="flex items-start justify-between gap-4 relative z-10">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl">{article.emoji}</span>
-                <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                  style={{ background: "rgba(70,214,122,.18)", color: "#46D67A", border: "1px solid rgba(70,214,122,.3)" }}>
-                  {article.categorie}
-                </span>
-              </div>
-              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 700, color: "#fff", lineHeight: 1.2, marginBottom: 12 }}>
-                {article.titre}
-              </h2>
-              <p className="text-xs" style={{ color: "rgba(255,255,255,.6)" }}>
-                {article.auteur} · {article.date} · {article.lecture} de lecture
-              </p>
-            </div>
-            <button onClick={onClose}
-              className="flex-shrink-0 flex items-center justify-center rounded-full text-white font-bold text-lg"
-              style={{ width: 36, height: 36, background: "rgba(255,255,255,.15)", border: "1px solid rgba(255,255,255,.2)", cursor: "pointer" }}>
-              ✕
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={onClose}
+          aria-label="Fermer"
+          className="absolute flex items-center justify-center rounded-full font-bold"
+          style={{
+            top: 10,
+            right: 10,
+            zIndex: 10,
+            width: 34,
+            height: 34,
+            color: "#0F7755",
+            background: "rgba(15,119,85,.08)",
+            border: "1px solid rgba(15,119,85,.18)",
+            cursor: "pointer",
+          }}
+        >
+          ✕
+        </button>
 
-        <div className="px-8 py-6 flex flex-col" style={{ flex: 1, minHeight: 0, overflow: "hidden" }}>
-          <p className="text-sm leading-relaxed mb-6 font-medium" style={{ color: "#2E6B52" }}>
-            {article.resume}
-          </p>
-          <div className="flex flex-col" style={{ flex: 1, minHeight: 0 }}>
-            <BookReader key={article.id} article={article} />
-          </div>
-        </div>
+        <BookReader key={article.id} article={article} />
       </div>
     </div>
   );
